@@ -8,6 +8,7 @@ class App extends React.Component {
     return (
       <>
         <Navbar />
+        <div className="glitch" data-text="THIS IS A TEST OF THE SYSTEM">THIS IS A TEST OF THE SYSTEM</div>
       </>
     )
   }
