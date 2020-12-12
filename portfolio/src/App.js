@@ -1,14 +1,23 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Navbar from './components/Navbar'
+import Navbar from './components/common/Navbar'
+import Home from './components/infos/Home'
+import Skills from './components/infos/Skills'
 
 class App extends React.Component {
 
   render() {
     return (
       <>
-        <Navbar />
-        <div className="glitch" data-text="THIS IS A TEST OF THE SYSTEM">THIS IS A TEST OF THE SYSTEM</div>
+        <BrowserRouter>
+          <Navbar />
+          
+          <Switch>
+            <Route exact path='/' component={Home}></Route>
+            <Route path='/skills' component={Skills}></Route>
+          </Switch>
+        </BrowserRouter>
       </>
     )
   }
