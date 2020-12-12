@@ -2,6 +2,7 @@
 
 body {
   font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
 }
 
 nav {
@@ -42,12 +43,20 @@ nav {
   }
 }
 
+.content-border{
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+
 
 .glitch {
-  color: red;
+  color: #333;
   font-size: 100px;
   position: relative;
-  width: 400px;
   margin: 0 auto;
 }
 @keyframes noise-anim {
@@ -69,7 +78,10 @@ nav {
   color: white;
   background: #333;
   overflow: hidden;
-  animation: noise-anim 2s infinite linear alternate-reverse;
+  animation: noise-anim 0.5s linear alternate-reverse;
+
+  width: 100%;
+  height: 100vh;
 }
 
 @keyframes noise-anim-2 {
@@ -91,5 +103,29 @@ nav {
   color: white;
   background: black;
   overflow: hidden;
-  animation: noise-anim-2 15s infinite linear alternate-reverse;
+  animation: noise-anim-2 0.5s linear alternate-reverse;
+
+  width: 100%;
+}
+
+
+.fade-appear,
+.fade-enter{
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 200ms linear 100ms;
+}
+
+.fade-exit{
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active{
+  opacity: 0;
+  transition: opacity 100ms linear;
 }
