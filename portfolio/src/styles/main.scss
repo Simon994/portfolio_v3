@@ -46,10 +46,9 @@ nav {
   }
 }
 
-
 // Glitch animation
 
-.content-border{
+.content-border {
   position: absolute;
   top: 100px;
   left: 0;
@@ -62,16 +61,20 @@ nav {
   position: relative;
   margin: 0 auto;
 }
+
 @keyframes noise-anim {
   $steps: 20;
+
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))} {
       $top: random(100);
       $bottom: random(101 - $top);
+
       clip-path: inset(#{$top}% 0 #{$bottom}%  0);
     }
   }
 }
+
 .glitch::after {
   content: attr(data-text);
   position: absolute;
@@ -82,67 +85,43 @@ nav {
   background: #333;
   overflow: hidden;
   animation: noise-anim 0.5s linear alternate-reverse;
-
   width: 100%;
 }
 
 @keyframes noise-anim-2 {
   $steps: 20;
+
   @for $i from 0 through $steps {
     #{percentage($i*(1/$steps))} {
       $top: random(100);
       $bottom: random(101 - $top);
+
       clip-path: inset(#{$top}% 0 #{$bottom}%  0);
     }
   }
 }
+
 .glitch::before {
   content: attr(data-text);
   position: absolute;
-  left: 0px;
+  left: 0;
   text-shadow: 1px 0 orange;
   top: 0;
   color: white;
-  background: black;
+  background: #333;
   overflow: hidden;
   animation: noise-anim-2 0.5s linear alternate-reverse;
-
   width: 100%;
 }
 
-//  Fade between views
+//  About view
 
-.fade-appear,
-.fade-enter{
-  opacity: 0;
-  z-index: 1;
-}
-
-.fade-appear-active,
-.fade-enter.fade-enter-active{
-  opacity: 1;
-  transition: opacity 500ms linear 200ms;
-}
-
-.fade-exit{
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active{
-  opacity: 0;
-  transition: opacity 200ms linear;
-}
-
-
-//  About view 
-
-.about-outer-container{
+.about-outer-container {
   height: 100vh;
   background-color: #333;
-  
 }
 
-.glitch.name{
+.glitch.name {
   font-size: 35px;
   width: 90%;
 }
