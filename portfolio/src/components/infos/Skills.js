@@ -1,35 +1,59 @@
 import React from 'react'
-import { DiGit, DiCss3 } from 'react-icons/di'
+import * as Is from 'react-icons/di'
+import { SiTypescript, SiJest, SiMocha } from 'react-icons/si'
+import { AiOutlineGitlab } from 'react-icons/ai'
+
+import { Icon } from './Icon'
 
 const Skills = () => {
   
-  const icon = <DiGit className='icon'/>
-  const cssIcon = <DiCss3 className='icon'/>
+  // const postgresql = 
+  // const npm = 
+  // const md = 
 
+  const icons = [
+    <Is.DiGit key='Git'/>,
+    <Is.DiGithubBadge key='GitHub'/>,
+    <AiOutlineGitlab key='GitLab'/>,
+    <Is.DiJavascript1 key='JavaScript'/>,
+    <Is.DiPython key='Python'/>,
+    <Is.DiCss3 key='CSS3'/>,
+    <Is.DiSass key='Sass'/>,
+    <Is.DiHtml5 key='HTML5'/>,
+    <Is.DiReact key='React.js'/>,
+    <Is.DiNodejs key='Node.js'/>,
+    <Is.DiDjango key='Django'/>,
+    <Is.DiMongodb key='MongoDB'/>,
+    <Is.DiPostgresql key='PostgreSQL'/>,
+    <Is.DiNpm key='npm'/>,
+    <Is.DiMarkdown key='Markdown'/>,
+    <Is.DiVisualstudio key='Visual Studio Code'/>,
+    <SiTypescript key='TypeScript'/>,
+    <SiJest key='Jest'/>,
+    <SiMocha key='Mocha'/>
+  ]
+  
   return (
     <>
       <div className="skills-content-outer">
-        <div className="skills-content-border">
-          <div className="example-one">
-            {icon}
-            {icon}
-            {icon}
-          </div>
-        </div>
-        <div className="skills-content-border">
-          <div className="example-one">
-            {cssIcon}
-            {cssIcon}
-            {cssIcon}
-          </div>
-        </div>
-        <div className="skills-content-border">
-          <div className="example-one">
-            {cssIcon}
-            {cssIcon}
-            {cssIcon}
-          </div>
-        </div>
+        {
+          icons.map((icon, index) => {
+            return <Icon
+              iconType={icon}
+              key={index}
+              id={icon.key}
+              isThin={
+                icon.key === 'Sass' ||
+                icon.key === 'Node.js' ||
+                icon.key === 'Django' ||
+                icon.key === 'npm' ||
+                icon.key === 'TypeScript' ||
+                icon.key === 'Jest'
+              }
+              className="icon"
+            />
+          })
+        }
       </div>
     </>  
   )
