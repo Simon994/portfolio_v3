@@ -12,7 +12,11 @@ class Navbar extends React.Component {
               About
             </Link>
           </li>
-          <li>Projects</li>
+          <li>
+            <Link to='/projects' className='nav-link'>
+              Projects
+            </Link>
+          </li>
           <li>
             <Link to='/skills' className='nav-link'>
               Skills

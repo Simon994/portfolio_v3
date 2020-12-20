@@ -219,3 +219,32 @@ $fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
 .icon-glitch-thin {
   @include svgGlitch("example-one", 100, hotpink, #333, #888, purple, 100, 100, 0, 0, 0);
 }
+
+
+//Project section
+
+.projects-outer-container{
+  margin-top: 100px;
+
+  .projects-cards-container{
+    margin: 0 auto;
+    width: 95%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .project-card{
+      margin: 10px;
+      width: 300px;
+      height: 400px;
+
+      border: 1px dashed rgb(168, 30, 189);
+      border-radius: 7px;
+
+      img{
+        max-width: 300px;
+      }
+    }
+  }
+}
