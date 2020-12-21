@@ -2,6 +2,7 @@
 import React from 'react'
 
 import redshirtsRun from '../../styles/screenshots/Redshirts_run_screenshot.png'
+import newsFeed from '../../styles/screenshots/News_Feed_V2Global.png'
 
 const Projects = () => {
   return (
@@ -22,7 +23,18 @@ const Projects = () => {
           </div> 
         </div>
         <div className='project-card'>
-
+          <a href="https://github.com/Simon994/news-feed-v2Global">
+            <img src={newsFeed} alt="NewsFeed demo"/>
+          </a> 
+          <div >
+            <div >
+              <h5>News Feed v2Global</h5>
+              <p>A React app that consumes API data from GNews.<br/>
+                <a href="https://github.com/Simon994/news-feed-v2Global">Github repository</a><br/>
+                <a href="https://the-news-feed-v2-global.netlify.app">Live version</a>
+              </p>
+            </div>
+          </div> 
         </div>
         <div className='project-card'>
 
