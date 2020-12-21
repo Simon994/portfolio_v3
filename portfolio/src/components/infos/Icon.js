@@ -6,7 +6,7 @@ export const Icon = (props) => {
 
   return (
     <div className="skills-content-border">
-      <div className={props.isThin ? 'icon-glitch-thin' : 'icon-glitch'}>
+      <div className='icon-glitch'>
         {icon}
         {icon}
         {icon}

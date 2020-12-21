@@ -165,9 +165,6 @@ nav {
   width: 110px;
   height: 110px;
   margin: 30px;
-
-  border: 1px solid red;
-  // z-index: 10;
 }
 
 @mixin svgGlitch($name, $intensity, $fillColor, $background,
@@ -222,18 +219,12 @@ $fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
 
 .icon-glitch {
   @include svgGlitch("example-one", 100, hotpink, #333, #888, purple, 100, 100, 0, 0, 3);
-}
 
-.icon-glitch-thin {
-  @include svgGlitch("example-one", 100, hotpink, #333, #888, purple, 100, 100, 0, 0, 3);
-}
-
-.icon-glitch,
-.icon-glitch-thin{
   svg{
     top: 0;
   }
 }
+
 
 //Project section
 

@@ -42,14 +42,6 @@ const Skills = () => {
               iconType={icon}
               key={index}
               id={icon.key}
-              isThin={
-                icon.key === 'Sass' ||
-                icon.key === 'Node.js' ||
-                icon.key === 'Django' ||
-                icon.key === 'npm' ||
-                icon.key === 'TypeScript' ||
-                icon.key === 'Jest'
-              }
               className="icon"
             />
           })
