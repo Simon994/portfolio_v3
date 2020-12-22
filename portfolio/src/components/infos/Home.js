@@ -1,6 +1,8 @@
 /* eslint-disable quotes */
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react'
+import { DiGithubBadge } from 'react-icons/di'
+import { TiSocialLinkedinCircular } from 'react-icons/ti'
 
 const Home = () => {
   
@@ -17,9 +19,16 @@ const Home = () => {
       <div className='about-outer-container'>
         <div className="glitch name content-border" data-text={name}>
           {name}
+          <div>
+            <a href="https://github.com/Simon994" target="blank">
+              <DiGithubBadge className="about-icon github"/>
+            </a>
+            <a href="https://www.linkedin.com/in/simonrtneil/" target="blank">
+              <TiSocialLinkedinCircular className="about-icon linkedin"/>
+            </a>
+          </div>
         </div>
-        
-        <div>
+        <div className="paras-container">
           <p className="glitch info-about content-border" data-text={infoAboutMe[0]}>
             {infoAboutMe[0]}
           </p>
@@ -31,7 +40,6 @@ const Home = () => {
           </p>
         </div>
       </div>
-
     </>
   )
 }

@@ -18,7 +18,7 @@ nav {
   justify-content: flex-end;
   overflow: hidden;
   background-color: #333;
-  z-index: 10;
+  z-index: 100;
 
   ul {
     text-decoration: none;
@@ -58,6 +58,21 @@ nav {
   top: 75px;
   left: 0;
   width: 100%;
+
+  .about-icon {
+    color: hotpink;
+    height: auto;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.github{
+  width: 100px;
+}
+
+.linkedin{
+  width: 95px;
 }
 
 .glitch {
@@ -133,6 +148,12 @@ nav {
   .glitch.name {
     font-size: 35px;
     padding-bottom: 15px;
+  }
+
+  .paras-container{
+    p:first-child{
+      margin-top: 0;
+    }
   }
 
   .info-about {

@@ -42,7 +42,6 @@ const Skills = () => {
               iconType={icon}
               key={index}
               id={icon.key}
-              className="icon"
             />
           })
         }
