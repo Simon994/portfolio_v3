@@ -7,10 +7,9 @@ import ProjectCard from './ProjectCard'
 
 const Projects = () => {
   return (
-    <div className='projects-outer-container fade-in'>
+    <div className='projects-outer-container'>
       <div className='projects-cards-container'>
         <ProjectCard 
-          className='project-card card-border'
           githubLink='https://github.com/Simon994/sei-project-1'
           imgLink={redshirtsRun}
           altText="Redshirt's run demo"
@@ -19,7 +18,6 @@ const Projects = () => {
           liveLink='https://simon994.github.io/sei-project-1/'
         />
         <ProjectCard 
-          className='project-card card-border'
           githubLink='https://github.com/Simon994/news-feed-v2Global'
           imgLink={newsFeed}
           altText="NewsFeed demo"

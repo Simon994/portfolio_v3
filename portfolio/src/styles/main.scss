@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
+$card-shadow: 0 0 10px 5px hotpink;
+$card-shadow-smooth:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+
 body {
   font-family: 'IBM Plex Mono', monospace;
   margin: 0;
@@ -67,11 +76,11 @@ nav {
   }
 }
 
-.github{
+.github {
   width: 100px;
 }
 
-.linkedin{
+.linkedin {
   width: 95px;
 }
 
@@ -150,8 +159,8 @@ nav {
     padding-bottom: 15px;
   }
 
-  .paras-container{
-    p:first-child{
+  .paras-container {
+    p:first-child {
       margin-top: 0;
     }
   }
@@ -190,13 +199,11 @@ nav {
 
 @mixin svgGlitch($name, $intensity, $fillColor, $background,
 $fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
-  $offsetLeft) {
+$offsetLeft) {
 
   $steps: $intensity;
 
-  // Ensure the @keyframes are generated at the root level
   @at-root {
-    // We need two different ones
     @for $i from 1 through 2 {
       @keyframes #{$name}-anim-#{$i} {
         @for $i from 0 through $steps {
@@ -224,7 +231,6 @@ $fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
     fill: $fillHighlight1;
     left: ($left - $offsetLeft) + px;
     animation: #{$name}-anim-1 0.75s linear alternate-reverse;
-
     padding-left: 10px;
   }
 
@@ -232,74 +238,69 @@ $fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
     fill: $fillHighlight2;
     left: ($left + $offsetLeft) + px;
     animation: #{$name}-anim-2 0.8s linear alternate-reverse;
-
     padding-left: 10px;
   }
 }
 
-
 .icon-glitch {
   @include svgGlitch("example-one", 100, hotpink, #333, #888, purple, 100, 100, 0, 0, 3);
 
-  svg{
+  svg {
     top: 0;
   }
 }
 
-
 //Project section
 
-.projects-outer-container{
+.projects-outer-container {
   margin-top: 100px;
 
-  .projects-cards-container{
+  .projects-cards-container {
     margin: 0 auto;
     width: 95%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 
-    .project-card{
+    .project-card {
       margin: 10px;
       width: 300px;
       height: 400px;
-
       border: 1px dashed rgb(168, 30, 189);
       border-radius: 7px;
 
-      img{
+      img {
         max-width: 300px;
       }
     }
   }
 }
 
-
 .fade-in {
-  animation: fadeIn ease 0.5s;
-  -webkit-animation: fadeIn ease 0.5s;
-  -moz-animation: fadeIn ease 0.5s;
-  }
-  @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-moz-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
-  
-  @-webkit-keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
-  }
+  animation: fadeIn ease 1s;
+  -webkit-animation: fadein ease 1s;
+  -moz-animation: fadein ease 1s;
+}
 
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; box-shadow: $card-shadow-smooth; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; box-shadow: $card-shadow-smooth; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; box-shadow: $card-shadow-smooth; }
+}
 
 .card-border {
-    transition: box-shadow 1s cubic-bezier(0.06, 3.13, 0.11, -1.26);
-    margin: 0.5em;
-  }
-  
-.card-border:hover { box-shadow: 0px 0px 10px 5px hotpink; }
+  transition: box-shadow 1s ease-in;
+  margin: 0.5em;
+  box-shadow: $card-shadow-smooth;
+}
+
+.card-border:hover { box-shadow: $card-shadow; }

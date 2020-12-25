@@ -12,7 +12,7 @@ const ProjectCard = (props) => {
   } = props
 
   return (
-    <div className='project-card card-border'>
+    <div className='project-card card-border fade-in'>
       <a href={githubLink}>
         <img src={imgLink} alt={altText}/>
       </a> 
