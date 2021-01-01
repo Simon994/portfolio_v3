@@ -266,17 +266,33 @@ $offsetLeft) {
 
 //Project section
 
+
+.project-blurb{
+  text-align: center;
+  padding: 30px;
+  text-shadow: 2px 2px rgb(61, 0, 99);
+  color: white;
+  line-height: 1.5;
+
+  a{
+    text-decoration: none;
+    color: hotpink;
+  }
+}
+
 //TO REMOVE AFTER ALL IMAGES CHANGED TO GLITCH
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 .project-img1-container,
 .project-img2-container,
-.project-img3-container{
+.project-img3-container,
+.project-img4-container{
   position: relative;
   opacity: 0.5;
 }
 
 .project-img2-container,
-.project-img3-container{
+.project-img3-container,
+.project-img4-container{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -289,13 +305,18 @@ $offsetLeft) {
 }
 
 .project-img2-container{
-  background-image: url('./screenshots/News_Feed_V2Global.png');
+  background-image: url('./screenshots/discover_montreal_home_screenshot.png');
   min-height: 300px;
 }
 
 .project-img3-container{
-  background-image: url('./screenshots/Discover_Montreal_screenshot.png');
+  background-image: url('./screenshots/news_feed_home_screenshot.png');
   min-height: 300px;
+}
+
+.project-img4-container{
+  background-image: url('./screenshots/redshirts_run_screenshot.png');
+  min-height: 500px;
 }
 
 .project-img1-glitch{
@@ -304,9 +325,10 @@ $offsetLeft) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./screenshots/Redshirts_run_screenshot.png') no-repeat 50% 0;
+  background: url('./screenshots/rawshot_photogrid_screenshot.png') no-repeat;
   background-color: $blend-color-1;
   background-size: cover;
+  background-position: top;
   transform: translate3d(0, 0, 0);
   background-blend-mode: $blend-mode-1;
   background-attachment: fixed;
