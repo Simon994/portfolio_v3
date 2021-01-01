@@ -22,7 +22,6 @@ class Navbar extends React.Component {
               Skills
             </Link>
           </li>
-          <li>Other</li>
         </ul>
       </nav>
     )
