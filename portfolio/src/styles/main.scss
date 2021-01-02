@@ -1,14 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-$card-shadow: 0 0 10px 5px hotpink;
-$card-shadow-smooth:
-  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);
-
+$dark-grey: #333;
+$purple: rgb(168, 30, 189);
+$dark-purple: rgb(61, 0, 99);
+$pink: hotpink;
 $glitch-height: 100vh;
 $glitch-width: 100vw;
 $hoz-shift: 20px;
@@ -19,16 +14,16 @@ $blend-mode-1: none;
 $blend-mode-2: overlay;
 $blend-mode-3: overlay;
 $blend-color-1: transparent;
-$blend-color-2: rgba(255,105,180,0.5);
-$blend-color-3: rgba(255,105,180,0.2);
+$blend-color-2: rgba(255, 105, 180, 0.5);
+$blend-color-3: rgba(255, 105, 180, 0.2);
 
 body {
   font-family: 'IBM Plex Mono', monospace;
   margin: 0;
-  background-color: #333;
+  background-color: $dark-grey;
 }
 
-// Nav and nav animation
+// Start of Nav
 
 nav {
   width: 100%;
@@ -39,7 +34,7 @@ nav {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
-  background-color: #333;
+  background-color: $dark-grey;
   z-index: 100;
 
   ul {
@@ -53,12 +48,12 @@ nav {
       padding-right: 15px;
 
       .nav-link {
-        color: rgb(168, 30, 189);
+        color: $purple;
         text-decoration: none;
       }
 
       .selected {
-        color: hotpink;
+        color: $pink;
       }
     }
 
@@ -77,7 +72,47 @@ nav {
   }
 }
 
-// Glitch animation
+//End of Nav
+
+//Start of About
+
+//  About view
+
+.about-outer-container {
+  height: 100vh;
+  background-color: $dark-grey;
+  margin: 20px;
+
+  .github {
+    width: 100px;
+  }
+  
+  .linkedin {
+    width: 95px;
+  }
+
+  .glitch.name,
+  .info-about {
+    max-width: 750px;
+  }
+
+  .glitch.name {
+    font-size: 35px;
+    padding-bottom: 15px;
+  }
+
+  .paras-container {
+    p:first-child {
+      margin-top: 0;
+    }
+
+    .info-about {
+      font-size: 20px;
+      line-height: 1.75;
+      margin-top: 30px;
+    }
+  }
+}
 
 .content-border {
   position: absolute;
@@ -86,23 +121,15 @@ nav {
   width: 100%;
 
   .about-icon {
-    color: hotpink;
+    color: $pink;
     height: auto;
     position: relative;
     z-index: 10;
   }
 }
 
-.github {
-  width: 100px;
-}
-
-.linkedin {
-  width: 95px;
-}
-
 .glitch {
-  color: #333;
+  color: $dark-grey;
   position: relative;
   margin: 0 auto;
 }
@@ -124,10 +151,10 @@ nav {
   content: attr(data-text);
   position: absolute;
   left: 0;
-  text-shadow: -1px 0 rgb(61, 0, 99);
+  text-shadow: -1px 0 $dark-purple;
   top: 0;
   color: white;
-  background: #333;
+  background: $dark-grey;
   overflow: hidden;
   animation: noise-anim 0.5s linear alternate-reverse;
   width: 100%;
@@ -150,52 +177,18 @@ nav {
   content: attr(data-text);
   position: absolute;
   left: 0;
-  text-shadow: 5px 0 hotpink;
+  text-shadow: 5px 0 $pink;
   top: 0;
   color: white;
-  background: #333;
+  background: $dark-grey;
   overflow: hidden;
   animation: noise-anim-2 0.5s linear alternate-reverse;
   width: 100%;
 }
 
-//  About view
+//End of About
 
-.about-outer-container {
-  height: 100vh;
-  background-color: #333;
-  margin: 20px;
-
-  .glitch.name,
-  .info-about {
-    max-width: 750px;
-  }
-
-  .glitch.name {
-    font-size: 35px;
-    padding-bottom: 15px;
-  }
-
-  .paras-container {
-    p:first-child {
-      margin-top: 0;
-    }
-  }
-
-  .info-about {
-    font-size: 20px;
-    line-height: 1.75;
-    margin-top: 30px;
-  }
-}
-
-// Skills section
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+//Start of Skills
 
 .skills-content-outer {
   margin: 0 auto;
@@ -261,27 +254,27 @@ $offsetLeft) {
 }
 
 .icon-glitch {
-  @include svgGlitch("example-one", 100, hotpink, #333, #888, purple, 100, 100, 0, 0, 3);
+  @include svgGlitch("svgGlitchOne", 100, $pink, $dark-grey, #888, $purple, 100, 100, 0, 0, 3);
 
   svg {
     top: 0;
   }
 }
 
+//End of Skills
 
 //Project section
 
-
-.project-blurb{
+.project-blurb {
   text-align: center;
   padding: 30px;
-  text-shadow: 2px 2px rgb(61, 0, 99);
+  text-shadow: 2px 2px $dark-purple;
   color: white;
   line-height: 1.5;
 
-  a{
+  a {
     text-decoration: none;
-    color: hotpink;
+    color: $pink;
   }
 }
 
@@ -290,41 +283,42 @@ $offsetLeft) {
 .project-img1-container,
 .project-img2-container,
 .project-img3-container,
-.project-img4-container{
+.project-img4-container {
   position: relative;
   opacity: 0.5;
 }
 
 .project-img2-container,
 .project-img3-container,
-.project-img4-container{
+.project-img4-container {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.project-img1-container{
+
+.project-img1-container {
   width: 100%;
   height: 500px;
   overflow: hidden;
 }
 
-.project-img2-container{
+.project-img2-container {
   background-image: url('./screenshots/discover_montreal_home_screenshot.png');
   min-height: 300px;
 }
 
-.project-img3-container{
+.project-img3-container {
   background-image: url('./screenshots/news_feed_home_screenshot.png');
   min-height: 300px;
 }
 
-.project-img4-container{
+.project-img4-container {
   background-image: url('./screenshots/redshirts_run_screenshot.png');
   min-height: 500px;
 }
 
-.project-img1-glitch{
+.project-img1-glitch {
   position: absolute;
   top: 0;
   left: 0;
@@ -341,18 +335,18 @@ $offsetLeft) {
 
 .project-img1-glitch:nth-child(n+2) {
   opacity: 0;
-}
-.project-img1-glitch:nth-child(n+2) {
   animation-duration: $time-anim;
   animation-delay: $delay-anim;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 .project-img1-glitch:nth-child(2) {
   background-color: $blend-color-2;
   background-blend-mode: $blend-mode-2;
   animation-name: glitch-1;
 }
+
 .project-img1-glitch:nth-child(3) {
   background-color: $blend-color-3;
   background-blend-mode: $blend-mode-3;
@@ -361,120 +355,144 @@ $offsetLeft) {
 
 @keyframes glitch-1 {
   0% {
-      opacity: 1;
-      transform: translate3d($hoz-shift, 0, 0);
-      -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
-      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    opacity: 1;
+    transform: translate3d($hoz-shift, 0, 0);
+    -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
   }
+
   2% {
-      -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
-      clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
   }
+
   4% {
-      -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
-      clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    -webkit-clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
   }
+
   6% {
-      -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
-      clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
   }
+
   8% {
-      -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
-      clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
   }
+
   10% {
-      -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
-      clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    -webkit-clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
   }
+
   12% {
-      -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
-      clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 20%, 0 20%);
   }
+
   14% {
-      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
-      clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
   }
+
   16% {
-      -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
-      clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    -webkit-clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
   }
+
   18% {
-      -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
-      clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    -webkit-clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
   }
+
   20% {
-      -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
-      clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    -webkit-clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
   }
+
   21.9% {
-      opacity: 1;
-      transform: translate3d($hoz-shift, 0, 0);
+    opacity: 1;
+    transform: translate3d($hoz-shift, 0, 0);
   }
+
   22%,
   100% {
-      opacity: 0;
-      transform: translate3d(0, 0, 0);
-      -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
-      clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    -webkit-clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
   }
 }
 
 @keyframes glitch-2 {
   0% {
-      opacity: 1;
-      transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
-      -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
-      clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    opacity: 1;
+    transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
+    -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
   }
+
   3% {
-      -webkit-clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
-      clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+    -webkit-clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+    clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
   }
+
   5% {
-      -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
-      clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+    -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
+    clip-path: polygon(0 5%, 100% 5%, 100% 20%, 0 20%);
   }
+
   7% {
-      -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
-      clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    -webkit-clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
   }
+
   9% {
-      -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
-      clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+    -webkit-clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
+    clip-path: polygon(0 40%, 100% 40%, 100% 40%, 0 40%);
   }
+
   11% {
-      -webkit-clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
-      clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+    -webkit-clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
+    clip-path: polygon(0 52%, 100% 52%, 100% 59%, 0 59%);
   }
+
   13% {
-      -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
-      clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
   }
+
   15% {
-      -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
-      clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+    -webkit-clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
+    clip-path: polygon(0 75%, 100% 75%, 100% 75%, 0 75%);
   }
+
   17% {
-      -webkit-clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
-      clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+    -webkit-clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
+    clip-path: polygon(0 65%, 100% 65%, 100% 40%, 0 40%);
   }
+
   19% {
-      -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
-      clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+    -webkit-clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
+    clip-path: polygon(0 45%, 100% 45%, 100% 50%, 0 50%);
   }
+
   20% {
-      -webkit-clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
-      clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
+    clip-path: polygon(0 14%, 100% 14%, 100% 33%, 0 33%);
   }
+
   21.9% {
-      opacity: 1;
-      transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
+    opacity: 1;
+    transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
   }
+
   22%,
   100% {
-      opacity: 0;
-      transform: translate3d(0, 0, 0);
-      -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
-      clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
+    clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
   }
 }

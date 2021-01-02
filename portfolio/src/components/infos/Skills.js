@@ -7,10 +7,6 @@ import { Icon } from './Icon'
 
 const Skills = () => {
   
-  // const postgresql = 
-  // const npm = 
-  // const md = 
-
   const icons = [
     <Is.DiGit key='Git'/>,
     <Is.DiGithubBadge key='GitHub'/>,
