@@ -56,16 +56,20 @@ nav {
         color: rgb(168, 30, 189);
         text-decoration: none;
       }
+
+      .selected {
+        color: hotpink;
+      }
     }
 
     li:hover {
       animation: 0.8s shake infinite alternate;
 
       @keyframes shake {
-        0% { transform: skewX(-15deg); }
-        5% { transform: skewX(15deg); }
-        10% { transform: skewX(-15deg); }
-        15% { transform: skewX(15deg); }
+        0% { transform: skewX(-30deg); }
+        5% { transform: skewX(30deg); }
+        10% { transform: skewX(-30deg); }
+        15% { transform: skewX(30deg); }
         20% { transform: skewX(0deg); }
         100% { transform: skewX(0deg); }
       }
