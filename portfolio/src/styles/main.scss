@@ -160,7 +160,7 @@ nav {
   width: 100%;
 }
 
-@keyframes noise-anim-2 {
+@keyframes glitch-animation-1 {
   $steps: 20;
 
   @for $i from 0 through $steps {
@@ -182,7 +182,7 @@ nav {
   color: white;
   background: $dark-grey;
   overflow: hidden;
-  animation: noise-anim-2 0.5s linear alternate-reverse;
+  animation: glitch-animation-1 0.5s linear alternate-reverse;
   width: 100%;
 }
 
@@ -263,7 +263,7 @@ $offsetLeft) {
 
 //End of Skills
 
-//Project section
+//Start of Projects
 
 .project-blurb {
   text-align: center;
