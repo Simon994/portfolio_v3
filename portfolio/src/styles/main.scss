@@ -428,7 +428,7 @@ $offsetLeft) {
 @keyframes glitch-2 {
   0% {
     opacity: 1;
-    transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
+    transform: translate3d(-20px, 0, 0);
     -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
     clip-path: polygon(0 25%, 100% 25%, 100% 30%, 0 30%);
   }
@@ -485,7 +485,7 @@ $offsetLeft) {
 
   21.9% {
     opacity: 1;
-    transform: translate3d(calc(-1 * $hoz-shift), 0, 0);
+    transform: translate3d(-20px, 0, 0);
   }
 
   22%,
