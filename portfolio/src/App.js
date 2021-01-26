@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, HashRouter } from 'react-router-dom'
 // import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import Navbar from './components/common/Navbar'
@@ -11,7 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <HashRouter basename='/'>
         <Navbar />
         <Route render={({ location }) => (
           <Switch location={location}>
@@ -20,7 +20,7 @@ class App extends React.Component {
             <Route path='/skills' component={Skills}></Route>
           </Switch>
         )} />
-      </>
+      </HashRouter>
     )
   }
 }
