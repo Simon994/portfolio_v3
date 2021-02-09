@@ -1,11 +1,5 @@
 import React from 'react'
 
-// const observerOptions = {
-//   root: null,
-//   rootMargin: '0px',
-//   threashold: 0
-// }
-
 export default function FadeIn(props) {
   const domRef = React.useRef()
   const [isVisible, setVisible] = React.useState(false)
