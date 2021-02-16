@@ -4,6 +4,8 @@ import React from 'react'
 import { DiGithubBadge } from 'react-icons/di'
 import { TiSocialLinkedinCircular } from 'react-icons/ti'
 
+import Plane from './Plane'
+
 const Home = () => {
   
   const name = 'Simon R.T. Neil'
@@ -16,6 +18,8 @@ const Home = () => {
 
   return (
     <>
+      <Plane name={name} info={infoAboutMe}>
+      </Plane>
       <div className='about-outer-container'>
         <div className="glitch name content-border" data-text={name}>
           {name}
