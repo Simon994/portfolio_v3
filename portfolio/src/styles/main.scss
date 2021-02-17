@@ -78,10 +78,18 @@ nav {
 
 //  About view
 
-.about-outer-container {
-  height: 100vh;
-  background-color: blue;
-  margin: 20px;
+.home-text-outer{
+  position: absolute;
+  padding: 20px;
+  top: 90px;
+  width: 100%;
+
+  .about-icon {
+    color: $pink;
+    height: auto;
+    position: relative;
+    z-index: 10;
+  }
 
   .github {
     width: 100px;
@@ -91,36 +99,17 @@ nav {
     width: 95px;
   }
 
-  .glitch.name,
-  .info-about {
+  .glitch.info {
+    font-size: 20px;
+    line-height: 1.75;
+    margin-top: 30px;
     max-width: 750px;
   }
 
-  .glitch.name {
-    font-size: 35px;
-    padding-bottom: 15px;
+  .glitch.info.home-text-container{
+    padding-top: 30px;
+    left: 0;
   }
-
-  .paras-container {
-    p:first-child {
-      margin-top: 0;
-    }
-
-    .info-about {
-      font-size: 20px;
-      line-height: 1.75;
-      margin-top: 30px;
-    }
-  }
-}
-
-.content-border {
-  position: absolute;
-  top: 75px;
-  left: 0;
-  width: 100%;
-
-
 }
 
 .glitch {
@@ -507,47 +496,3 @@ $offsetLeft) {
   transform: none;
   visibility: visible;
 }
-
-
-
-
-
-
-// Experimenting
-
-.home-text-outer{
-  border: 2px solid blue;
-
-  position: absolute;
-  padding: 40px;
-  top: 90px;
-  width: 90%;
-
-
-  .about-icon {
-    color: $pink;
-    height: auto;
-    position: relative;
-    z-index: 10;
-  }
-  
-  .github {
-    width: 100px;
-  }
-  
-  .linkedin {
-    width: 95px;
-  }
-
-  .glitch.name.home-text-container{
-    border: 1px solid chartreuse;
-    padding-top: 30px;
-    left: 0;
-    width: 100%;
-    
-    line-height: 2.5;
-  }
-
-}
-
-

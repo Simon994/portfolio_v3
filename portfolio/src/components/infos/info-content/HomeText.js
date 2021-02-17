@@ -10,7 +10,7 @@ const HomeText = (props) => {
   return (
     <>
       <div className="home-text-outer">
-        <div>
+        <div className="glitch info home-text-container">
           <a href="https://github.com/Simon994" target="blank">
             <DiGithubBadge className="about-icon github"/>
           </a>
@@ -18,13 +18,13 @@ const HomeText = (props) => {
             <TiSocialLinkedinCircular className="about-icon linkedin"/>
           </a>
         </div>
-        <p className="glitch name home-text-container" id="" data-text={info[0]}>
+        <p className="glitch info home-text-container" data-text={info[0]}>
           {info[0]}
         </p>
-        <p className="glitch name home-text-container" id="" data-text={info[1]}>
+        <p className="glitch info home-text-container" data-text={info[1]}>
           {info[1]}
         </p>
-        <p className="glitch name home-text-container" id="" data-text={info[2]}>
+        <p className="glitch info home-text-container" data-text={info[2]}>
           {info[2]}
         </p>
       </div>
