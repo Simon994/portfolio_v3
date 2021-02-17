@@ -8,25 +8,25 @@ import { Icon } from './Icon'
 const Skills = () => {
   
   const icons = [
-    <Is.DiGit key='Git'/>,
-    <Is.DiGithubBadge key='GitHub'/>,
-    <AiOutlineGitlab key='GitLab'/>,
-    <Is.DiJavascript1 key='JavaScript'/>,
-    <Is.DiPython key='Python'/>,
-    <Is.DiCss3 key='CSS3'/>,
-    <Is.DiSass key='Sass'/>,
-    <Is.DiHtml5 key='HTML5'/>,
-    <Is.DiReact key='React.js'/>,
-    <Is.DiNodejs key='Node.js'/>,
-    <Is.DiDjango key='Django'/>,
-    <Is.DiMongodb key='MongoDB'/>,
-    <Is.DiPostgresql key='PostgreSQL'/>,
-    <Is.DiNpm key='npm'/>,
-    <Is.DiMarkdown key='Markdown'/>,
-    <Is.DiVisualstudio key='Visual Studio Code'/>,
-    <SiTypescript key='TypeScript'/>,
-    <SiJest key='Jest'/>,
-    <SiMocha key='Mocha'/>
+    <Is.DiGit />,
+    <Is.DiGithubBadge />,
+    <AiOutlineGitlab />,
+    <Is.DiJavascript1 />,
+    <Is.DiPython />,
+    <Is.DiCss3 />,
+    <Is.DiSass />,
+    <Is.DiHtml5 />,
+    <Is.DiReact />,
+    <Is.DiNodejs />,
+    <Is.DiDjango />,
+    <Is.DiMongodb />,
+    <Is.DiPostgresql />,
+    <Is.DiNpm />,
+    <Is.DiMarkdown />,
+    <Is.DiVisualstudio />,
+    <SiTypescript />,
+    <SiJest />,
+    <SiMocha />
   ]
   
   return (
@@ -37,7 +37,6 @@ const Skills = () => {
             return <Icon
               iconType={icon}
               key={index}
-              id={icon.key}
             />
           })
         }
