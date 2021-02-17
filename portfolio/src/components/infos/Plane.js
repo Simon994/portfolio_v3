@@ -1,20 +1,17 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-
-import textureImg from "../../styles/assets/img.jpg"
-
+import React, { Component } from "react"
 import * as THREE from "three";
-import { CompressedPixelFormat } from "three";
-class Plane extends Component {
-  componentDidMount() {
-   
 
-    let texture
-    let mouse = new THREE.Vector2(0,0)
+import HomeText from "./info-content/HomeText"
+import textureImg from "../../styles/assets/deadpool_new.png"
+
+class Plane extends Component {
+  
+  componentDidMount() {
+
+    let texture = null
     
     const loaderPromise = new Promise(function(resolve) {
       function loadDone(x) {
-        console.log("loader completed")
         resolve(x)
       }
       const loader = new THREE.TextureLoader()
@@ -33,6 +30,7 @@ class Plane extends Component {
     const init =() => {
     
       const scene = new THREE.Scene()
+      scene.background = new THREE.Color( 0x333333 );
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
       camera.position.z = 0.5
     
@@ -40,11 +38,15 @@ class Plane extends Component {
       renderer.setSize( window.innerWidth, window.innerHeight )
       this.mount.appendChild( renderer.domElement )
     
+      const material = new THREE.MeshBasicMaterial({map: texture})
+      material.transparent = true
+      material.opacity = 0.25
+
       let plane = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(), 
-        new THREE.MeshBasicMaterial({map: texture})
+        material
       )
-      console.log(plane)
+
       scene.add( plane )
       function animate() {
         requestAnimationFrame( animate )
@@ -58,14 +60,14 @@ class Plane extends Component {
   }
 
   render() {
-    const { name } = this.props
-    
+    const { usage, info } = this.props
+
     return (
       <>
         <div ref={ref => (this.mount = ref)}>
-          <div className="glitch name content-border" data-text={name}>
-          {name}
-          </div>
+          {usage === "home" && 
+            <HomeText info={info}/>
+          }
         </div>
       </>
     )

@@ -80,7 +80,7 @@ nav {
 
 .about-outer-container {
   height: 100vh;
-  background-color: $dark-grey;
+  background-color: blue;
   margin: 20px;
 
   .github {
@@ -120,16 +120,11 @@ nav {
   left: 0;
   width: 100%;
 
-  .about-icon {
-    color: $pink;
-    height: auto;
-    position: relative;
-    z-index: 10;
-  }
+
 }
 
 .glitch {
-  color: $dark-grey;
+  color: rgba(0, 0, 0, 0);
   position: relative;
   margin: 0 auto;
 }
@@ -151,10 +146,9 @@ nav {
   content: attr(data-text);
   position: absolute;
   left: 0;
-  text-shadow: -1px 0 $dark-purple;
+  text-shadow: -2px 0 $dark-purple;
   top: 0;
   color: white;
-  // background-color: rgba(20, 20, 20, 0.1);
   overflow: hidden;
   animation: noise-anim 1s linear alternate-reverse;
   width: 100%;
@@ -180,12 +174,11 @@ nav {
   text-shadow: 5px 0 $pink;
   top: 0;
   color: white;
-  // background-color: rgba(20, 20, 20, 0.1);
   overflow: hidden;
   animation: glitch-animation-1 1s linear alternate-reverse;
   width: 100%;
 
-  clip-path: inset(100% 100% 100%  100%);
+  clip-path: inset(100%);
 }
 
 //End of About
@@ -522,63 +515,39 @@ $offsetLeft) {
 
 // Experimenting
 
-#text-overlay {
-  color: red;
-  border: 1px solid chartreuse;
+.home-text-outer{
+  border: 2px solid blue;
 
-  position: relative;
-  left: 10px;
-  top: 200px;
-}
-
-@keyframes text-overlay-noise-anim {
-  $steps: 20;
-
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-
-      clip-path: inset(#{$top}% 0 #{$bottom}%  0);
-    }
-  }
-}
-
-#text-overlay::after {
-  content: attr(data-textoverlay);
   position: absolute;
-  left: 0px;
-  text-shadow: -1px 0 $dark-purple;
-  top: 0;
-  color: white;
-  // background: $dark-grey;
-  overflow: hidden;
-  animation: text-overlay-noise-anim 5s linear alternate-reverse;
-  width: 100%;
-}
+  padding: 40px;
+  top: 90px;
+  width: 90%;
 
-@keyframes text-overlay-animation-1 {
-  $steps: 20;
 
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-
-      clip-path: inset(#{$top}% 0 #{$bottom}%  0);
-    }
+  .about-icon {
+    color: $pink;
+    height: auto;
+    position: relative;
+    z-index: 10;
   }
+  
+  .github {
+    width: 100px;
+  }
+  
+  .linkedin {
+    width: 95px;
+  }
+
+  .glitch.name.home-text-container{
+    border: 1px solid chartreuse;
+    padding-top: 30px;
+    left: 0;
+    width: 100%;
+    
+    line-height: 2.5;
+  }
+
 }
 
-#text-overlay::before {
-  content: attr(data-textoverlay);
-  position: absolute;
-  left: 0;
-  text-shadow: 5px 0 $pink;
-  top: 0;
-  color: white;
-  // background: $dark-grey;
-  overflow: hidden;
-  animation: text-overlay-animation-1 5s linear alternate-reverse;
-  width: 100%;
-}
+
