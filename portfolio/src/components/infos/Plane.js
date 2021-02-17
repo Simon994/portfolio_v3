@@ -63,7 +63,6 @@ class Plane extends Component {
     return (
       <>
         <div ref={ref => (this.mount = ref)}>
-          <p id="text-overlay" data-textoverlay={name}>{name}</p>
           <div className="glitch name content-border" data-text={name}>
           {name}
           </div>
