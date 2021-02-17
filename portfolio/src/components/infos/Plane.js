@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import * as THREE from "three";
 
 import HomeText from "./info-content/HomeText"
-import textureImg from "../../styles/assets/deadpool_new.png"
+import textureImg from "../../styles/assets/logo.png"
 
 class Plane extends Component {
   
@@ -32,7 +32,7 @@ class Plane extends Component {
       const scene = new THREE.Scene()
       scene.background = new THREE.Color( 0x333333 );
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
-      camera.position.z = 0.5
+      camera.position.z = 0.80
     
       const renderer = new THREE.WebGLRenderer()
       renderer.setSize( window.innerWidth, window.innerHeight )
@@ -40,7 +40,7 @@ class Plane extends Component {
     
       const material = new THREE.MeshBasicMaterial({map: texture})
       material.transparent = true
-      material.opacity = 0.25
+      material.opacity = 0.2
 
       let plane = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(), 
