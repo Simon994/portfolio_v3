@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
-import styles from './navbar.module.scss'
+import styles from './Navbar.module.scss'
 
 class Navbar extends React.Component {
 
