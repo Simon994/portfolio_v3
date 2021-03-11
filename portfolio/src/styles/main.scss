@@ -1,21 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-$dark-grey: #333;
-$purple: rgb(168, 30, 189);
-$dark-purple: rgb(61, 0, 99);
-$pink: hotpink;
-$glitch-height: 100vh;
-$glitch-width: 100vw;
-$hoz-shift: 20px;
-$vert-shift: 10px;
-$time-anim: 4s;
-$delay-anim: 1.5s;
-$blend-mode-1: none;
-$blend-mode-2: overlay;
-$blend-mode-3: overlay;
-$blend-color-1: transparent;
-$blend-color-2: rgba(255, 105, 180, 0.5);
-$blend-color-3: rgba(255, 105, 180, 0.2);
+@import '../main.modules.scss';
 
 body {
   font-family: 'IBM Plex Mono', monospace;
@@ -25,53 +9,53 @@ body {
 
 // Start of Nav
 
-nav {
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  overflow: hidden;
-  background-color: $dark-grey;
-  z-index: 100;
+// nav {
+//   width: 100%;
+//   height: 50px;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   display: flex;
+//   justify-content: flex-end;
+//   overflow: hidden;
+//   background-color: $dark-grey;
+//   z-index: 100;
 
-  ul {
-    text-decoration: none;
-    width: 300px;
-    display: flex;
-    justify-content: space-around;
+//   ul {
+//     text-decoration: none;
+//     width: 300px;
+//     display: flex;
+//     justify-content: space-around;
 
-    li {
-      display: block;
-      padding-right: 15px;
+//     li {
+//       display: block;
+//       padding-right: 15px;
 
-      .nav-link {
-        color: $purple;
-        text-decoration: none;
-      }
+//       .nav-link {
+//         color: $purple;
+//         text-decoration: none;
+//       }
 
-      .selected {
-        color: $pink;
-      }
-    }
+//       .selected {
+//         color: $pink;
+//       }
+//     }
 
-    li:hover {
-      animation: 0.8s shake infinite alternate;
-      cursor: pointer;
+//     li:hover {
+//       animation: 0.8s shake infinite alternate;
+//       cursor: pointer;
 
-      @keyframes shake {
-        0% { transform: skewX(-30deg); }
-        5% { transform: skewX(30deg); }
-        10% { transform: skewX(-30deg); }
-        15% { transform: skewX(30deg); }
-        20% { transform: skewX(0deg); }
-        100% { transform: skewX(0deg); }
-      }
-    }
-  }
-}
+//       @keyframes shake {
+//         0% { transform: skewX(-30deg); }
+//         5% { transform: skewX(30deg); }
+//         10% { transform: skewX(-30deg); }
+//         15% { transform: skewX(30deg); }
+//         20% { transform: skewX(0deg); }
+//         100% { transform: skewX(0deg); }
+//       }
+//     }
+//   }
+// }
 
 //End of Nav
 

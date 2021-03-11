@@ -1,44 +1,46 @@
 import React from 'react'
 import { Link } from 'react-scroll'
 
+import styles from './navbar.module.scss'
+
 class Navbar extends React.Component {
 
   render(){
     return (
-      <nav>
+      <nav >
         <ul>
           <li>
             <Link
-              activeClass="active"
               to="section1"
               spy={true}
               smooth={true}
               duration={1000}
-              className='nav-link'
+              className={styles.navLink}
+              activeClass={styles.selected}
             >
               About
             </Link>
           </li>
           <li>
             <Link
-              activeClass="active"
               to="section2"
               spy={true}
               smooth={true}
               duration={1000}
-              className='nav-link'
+              className={styles.navLink}
+              activeClass={styles.selected}
             >
                 Projects
             </Link>
           </li>
           <li>
             <Link
-              activeClass="active"
               to="section3"
               spy={true}
               smooth={true}
               duration={1000}
-              className='nav-link'
+              className={styles.navLink}
+              activeClass={styles.selected}
             >
                 Skills
             </Link>

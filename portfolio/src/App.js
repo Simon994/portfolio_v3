@@ -5,6 +5,7 @@ import Home from './components/infos/Home'
 import Skills from './components/infos/Skills'
 import Projects from './components/infos/Projects'
 
+
 class App extends React.Component {
 
   render() {
