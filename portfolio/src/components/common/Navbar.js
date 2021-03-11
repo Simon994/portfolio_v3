@@ -7,9 +7,9 @@ class Navbar extends React.Component {
 
   render(){
     return (
-      <nav >
-        <ul>
-          <li>
+      <nav className={styles.navbar}>
+        <ul className={styles.list}>
+          <li className={styles.listItem}>
             <Link
               to="section1"
               spy={true}
@@ -21,7 +21,7 @@ class Navbar extends React.Component {
               About
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <Link
               to="section2"
               spy={true}
@@ -33,7 +33,7 @@ class Navbar extends React.Component {
                 Projects
             </Link>
           </li>
-          <li>
+          <li className={styles.listItem}>
             <Link
               to="section3"
               spy={true}

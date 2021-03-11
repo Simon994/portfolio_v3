@@ -5,9 +5,12 @@ import HomeText from './info-content/HomeText'
 import textureImg from '../../styles/assets/logo.png'
 
 class Plane extends Component {
+  state = {
+    loaded: false
+  }
   
   componentDidMount() {
-
+    
     let texture = null
     
     const loaderPromise = new Promise(function(resolve) {
@@ -56,6 +59,10 @@ class Plane extends Component {
       }
     
       animate()
+
+      this.setState({
+        loaded: true
+      })
     }
   }
 
@@ -64,6 +71,10 @@ class Plane extends Component {
 
     return (
       <>
+        {
+          this.state.loaded === false &&
+          <div style={{height: '100vh', background: '#333'}}></div>
+        }
         <div ref={ref => (this.mount = ref)}>
           {usage === 'home' && 
             <HomeText info={info}/>
