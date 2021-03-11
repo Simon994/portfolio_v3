@@ -11,9 +11,9 @@ const Home = () => {
   ]
 
   return (
-    <>
+    <div id='section1'>
       <Plane usage="home" info={infoAboutMe}/>
-    </>
+    </div>
   )
 }
 

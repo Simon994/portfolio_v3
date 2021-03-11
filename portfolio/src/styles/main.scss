@@ -59,6 +59,7 @@ nav {
 
     li:hover {
       animation: 0.8s shake infinite alternate;
+      cursor: pointer;
 
       @keyframes shake {
         0% { transform: skewX(-30deg); }

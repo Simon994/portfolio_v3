@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { Link } from 'react-scroll'
 
 class Navbar extends React.Component {
 
@@ -8,31 +8,40 @@ class Navbar extends React.Component {
       <nav>
         <ul>
           <li>
-            <NavLink 
-              exact to='/'
+            <Link
+              activeClass="active"
+              to="section1"
+              spy={true}
+              smooth={true}
+              duration={1000}
               className='nav-link'
-              activeClassName='selected'
             >
               About
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink 
-              to='/projects' 
+            <Link
+              activeClass="active"
+              to="section2"
+              spy={true}
+              smooth={true}
+              duration={1000}
               className='nav-link'
-              activeClassName='selected'
             >
-              Projects
-            </NavLink>
+                Projects
+            </Link>
           </li>
           <li>
-            <NavLink 
-              to='/skills'
+            <Link
+              activeClass="active"
+              to="section3"
+              spy={true}
+              smooth={true}
+              duration={1000}
               className='nav-link'
-              activeClassName='selected'
             >
-              Skills
-            </NavLink>
+                Skills
+            </Link>
           </li>
         </ul>
       </nav>
@@ -40,4 +49,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default withRouter(Navbar)
+export default Navbar

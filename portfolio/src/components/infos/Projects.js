@@ -5,7 +5,7 @@ import FadeIn from './Fade'
 
 const Projects = () => {
   return (
-    <>   
+    <div id='section2'>   
       <div className="project-img1-container">
         <div className="project-img1-glitch"></div>
         <div className="project-img1-glitch"></div>
@@ -57,7 +57,7 @@ const Projects = () => {
           <p><a href="https://simon994.github.io/sei-project-1/" target="blank">Live version</a>  |  <a href="https://github.com/Simon994/sei-project-1" target="blank">GitHub repo</a> </p>
         </section>
       </FadeIn>
-    </>
+    </div>
   )
 }
 

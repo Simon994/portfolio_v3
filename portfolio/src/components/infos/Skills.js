@@ -31,18 +31,16 @@ const Skills = () => {
   ]
   
   return (
-    <>
-      <div className="skills-content-outer">
-        {
-          icons.map((icon, index) => {
-            return <Icon
-              iconType={icon}
-              key={index}
-            />
-          })
-        }
-      </div>
-    </>  
+    <div id='section3' className="skills-content-outer">
+      {
+        icons.map((icon, index) => {
+          return <Icon
+            iconType={icon}
+            key={index}
+          />
+        })
+      }
+    </div>
   )
 }
 
