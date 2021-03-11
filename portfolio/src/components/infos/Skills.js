@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react'
 import * as Is from 'react-icons/di'
 import { SiTypescript, SiJest, SiMocha } from 'react-icons/si'

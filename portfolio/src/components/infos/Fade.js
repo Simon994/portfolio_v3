@@ -8,7 +8,7 @@ export default function FadeIn(props) {
     entries => {
       entries.forEach(function(entry) {
         setVisible(entry.isIntersecting)
-        } 
+      } 
       )
     }
   )
@@ -25,5 +25,5 @@ export default function FadeIn(props) {
     >
       {props.children}
     </div>
-  );
+  )
 }

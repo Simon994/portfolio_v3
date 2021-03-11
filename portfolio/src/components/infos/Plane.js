@@ -1,8 +1,8 @@
-import React, { Component } from "react"
-import * as THREE from "three";
+import React, { Component } from 'react'
+import * as THREE from 'three'
 
-import HomeText from "./info-content/HomeText"
-import textureImg from "../../styles/assets/logo.png"
+import HomeText from './info-content/HomeText'
+import textureImg from '../../styles/assets/logo.png'
 
 class Plane extends Component {
   
@@ -30,7 +30,7 @@ class Plane extends Component {
     const init =() => {
     
       const scene = new THREE.Scene()
-      scene.background = new THREE.Color( 0x333333 );
+      scene.background = new THREE.Color( 0x333333 )
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
       camera.position.z = 0.80
     
@@ -65,7 +65,7 @@ class Plane extends Component {
     return (
       <>
         <div ref={ref => (this.mount = ref)}>
-          {usage === "home" && 
+          {usage === 'home' && 
             <HomeText info={info}/>
           }
         </div>
