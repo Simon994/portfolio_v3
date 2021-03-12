@@ -43,7 +43,7 @@ class Plane extends Component {
 
       const material = new THREE.MeshBasicMaterial({ map: texture })
       material.transparent = true
-      material.opacity = 0.2
+      material.opacity = 0.175
 
       let plane = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(),
