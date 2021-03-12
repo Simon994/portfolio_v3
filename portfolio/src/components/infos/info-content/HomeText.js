@@ -18,29 +18,27 @@ const HomeText = (props) => {
   const { infos } = props
 
   return (
-    <>
-      <div className={styles.homeTextOuter}>
-        <div className={`${glitch} ${infoText} ${homeTextContainer}`}>
-          <a href="https://github.com/Simon994" target="blank">
-            <DiGithubBadge className={`${aboutIcon} ${github}`} />
-          </a>
-          <a href="https://www.linkedin.com/in/simonrtneil/" target="blank">
-            <TiSocialLinkedinCircular className={`${aboutIcon} ${linkedin}`} />
-          </a>
-        </div>
-        <div>
-          {infos.map((info,index) => (
-            <p key={index} 
-              className={`${glitch} ${infoText} ${homeTextContainer}`}
-              data-text={info}
-            >
-              {info}
-            </p>
-          )
-          )}
-        </div>
+    <div className={styles.homeTextOuter}>
+      <div className={`${glitch} ${infoText} ${homeTextContainer}`}>
+        <a href="https://github.com/Simon994" target="blank">
+          <DiGithubBadge className={`${aboutIcon} ${github}`} />
+        </a>
+        <a href="https://www.linkedin.com/in/simonrtneil/" target="blank">
+          <TiSocialLinkedinCircular className={`${aboutIcon} ${linkedin}`} />
+        </a>
       </div>
-    </>
+      <div>
+        {infos.map((info, index) => (
+          <p key={index}
+            className={`${glitch} ${infoText} ${homeTextContainer}`}
+            data-text={info}
+          >
+            {info}
+          </p>
+        )
+        )}
+      </div>
+    </div>
   )
 }
 

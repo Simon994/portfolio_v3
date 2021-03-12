@@ -8,56 +8,56 @@ class Plane extends Component {
   state = {
     loaded: false
   }
-  
+
   componentDidMount() {
-    
+
     let texture = null
-    
-    const loaderPromise = new Promise(function(resolve) {
+
+    const loaderPromise = new Promise(function (resolve) {
       function loadDone(x) {
         resolve(x)
       }
       const loader = new THREE.TextureLoader()
       loader.load(textureImg, loadDone)
     })
-    
+
     loaderPromise
-      .then(function(response) {
+      .then(function (response) {
         texture = response
         init()
-        
-      }, function(error) {
+
+      }, function (error) {
         console.log(error)
       })
-    
-    const init =() => {
-    
+
+    const init = () => {
+
       const scene = new THREE.Scene()
-      scene.background = new THREE.Color( 0x333333 )
-      const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
+      scene.background = new THREE.Color(0x333333)
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
       camera.position.z = 0.80
-    
+
       const renderer = new THREE.WebGLRenderer()
-      renderer.setSize( window.innerWidth, window.innerHeight )
-      this.mount.appendChild( renderer.domElement )
-    
-      const material = new THREE.MeshBasicMaterial({map: texture})
+      renderer.setSize(window.innerWidth, window.innerHeight)
+      this.mount.appendChild(renderer.domElement)
+
+      const material = new THREE.MeshBasicMaterial({ map: texture })
       material.transparent = true
       material.opacity = 0.2
 
       let plane = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(), 
+        new THREE.PlaneBufferGeometry(),
         material
       )
 
-      scene.add( plane )
+      scene.add(plane)
       function animate() {
-        requestAnimationFrame( animate )
+        requestAnimationFrame(animate)
         plane.rotation.x += 0.001
         plane.rotation.y += 0.001
-        renderer.render( scene, camera )
+        renderer.render(scene, camera)
       }
-    
+
       animate()
 
       this.setState({
@@ -67,19 +67,17 @@ class Plane extends Component {
   }
 
   render() {
-    const { usage, infos } = this.props
+    const { infos } = this.props
 
     return (
       <>
         {
           this.state.loaded === false &&
-          <div style={{height: '100vh', background: '#333'}}></div>
+          <div style={{ height: '100vh', background: '#333' }}></div>
         }
-        <div ref={ref => (this.mount = ref)}>
-          {usage === 'home' && 
-            <HomeText infos={infos}/>
-          }
+        <div className='canvasContainer' ref={ref => (this.mount = ref)}>
         </div>
+        <HomeText infos={infos} />
       </>
     )
   }

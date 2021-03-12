@@ -7,102 +7,11 @@ body {
   background-color: $dark-grey;
 }
 
-//Start of About
-
-//  About view
-
-.home-text-outer {
+canvas {
   position: absolute;
-  padding: 20px;
-  top: 90px;
-  width: 100%;
-
-  .about-icon {
-    color: $pink;
-    height: auto;
-    position: relative;
-    z-index: 10;
-  }
-
-  .github {
-    width: 100px;
-  }
-
-  .linkedin {
-    width: 95px;
-  }
-
-  .glitch.info {
-    font-size: 20px;
-    line-height: 1.75;
-    margin-top: 30px;
-    max-width: 750px;
-  }
-
-  .glitch.info.home-text-container {
-    padding-top: 30px;
-    left: 0;
-  }
-}
-
-.glitch {
-  color: rgba(0, 0, 0, 0);
-  position: relative;
-  margin: 0 auto;
-}
-
-@keyframes noise-anim {
-  $steps: 20;
-
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-
-      clip-path: inset(#{$top}% 0 #{$bottom}%  0);
-    }
-  }
-}
-
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  text-shadow: -2px 0 $dark-purple;
   top: 0;
-  color: white;
-  overflow: hidden;
-  animation: noise-anim 1s linear alternate-reverse;
-  width: 100%;
+  z-index: -1;
 }
-
-@keyframes glitch-animation-1 {
-  $steps: 20;
-
-  @for $i from 0 through $steps {
-    #{percentage($i*(1/$steps))} {
-      $top: random(100);
-      $bottom: random(101 - $top);
-
-      clip-path: inset(#{$top}% 0 #{$bottom}%  0);
-    }
-  }
-}
-
-.glitch::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  text-shadow: 5px 0 $pink;
-  top: 0;
-  color: white;
-  overflow: hidden;
-  animation: glitch-animation-1 1s linear alternate-reverse;
-  width: 100%;
-  clip-path: inset(100%);
-}
-
-//End of About
 
 //Start of Skills
 
