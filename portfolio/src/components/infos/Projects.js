@@ -2,18 +2,19 @@
 import React from 'react'
 
 import FadeIn from './Fade'
+import styles from './Projects.module.scss'
 
 const Projects = () => {
   return (
     <div id='section2'>   
-      <div className="project-img1-container">
-        <div className="project-img1-glitch"></div>
-        <div className="project-img1-glitch"></div>
-        <div className="project-img1-glitch"></div>
+      <div className={styles.projectImg1Container}>
+        <div className={styles.projectImg1Glitch}></div>
+        <div className={styles.projectImg1Glitch}></div>
+        <div className={styles.projectImg1Glitch}></div>
       </div>
 
       <FadeIn>
-        <section className="project-blurb section-light">
+        <section className={styles.projectBlurb}>
           <h3>499px (RAWshot)</h3>
           <p>A full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px</p>
           <p>Technologies include: Django, Django REST framework, React, PostgreSQL, SASS, Axios and Semantic UI React</p>
@@ -23,10 +24,10 @@ const Projects = () => {
         </section>
       </FadeIn>
 
-      <div className="project-img2-container"></div>
+      <div className={styles.projectImg2Container}></div>
 
       <FadeIn>
-        <section className="project-blurb section-dark">
+        <section className={styles.projectBlurb}>
           <h3>Discover Montréal</h3>
           <p>Full-stack MERN app with multiple relationships and CRUD functionality</p>
           <p>Users can share, rate and comment on attractions around Montréal</p>
@@ -35,10 +36,10 @@ const Projects = () => {
         </section>
       </FadeIn>
 
-      <div className="project-img3-container"></div>
+      <div className={styles.projectImg3Container}></div>
 
       <FadeIn>
-        <section className="project-blurb section-dark">
+        <section className={styles.projectBlurb}>
           <h3>News Feed <span style={{ fontWeight: '400' }}>and</span> News Feed v2Global</h3>
           <p>A React app that consumes 3rd party API data from News API</p>
           <p>My focus included building the top-stories section and other components, styling, bug-fixing, and contributing to overall project planning</p>
@@ -47,10 +48,10 @@ const Projects = () => {
           </p>
         </section>
       </FadeIn>
-      <div className="project-img4-container"></div>
+      <div className={styles.projectImg4Container}></div>
 
       <FadeIn>
-        <section className="project-blurb section-light">
+        <section className={styles.projectBlurb}>
           <h3>Redshirt's Run</h3>
           <p>A grid-based game, inspired by Pacman and Star Trek, built with vanilla JavaScript, HTML5 and CSS3</p>
           <p>Built solo in a week, three weeks into my Software Engineering Immersive at General Assembly</p>
