@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div id='section1'>
-      <Plane usage="home" info={infoAboutMe}/>
+      <Plane usage="home" infos={infoAboutMe}/>
     </div>
   )
 }

@@ -67,7 +67,7 @@ class Plane extends Component {
   }
 
   render() {
-    const { usage, info } = this.props
+    const { usage, infos } = this.props
 
     return (
       <>
@@ -77,7 +77,7 @@ class Plane extends Component {
         }
         <div ref={ref => (this.mount = ref)}>
           {usage === 'home' && 
-            <HomeText info={info}/>
+            <HomeText infos={infos}/>
           }
         </div>
       </>
