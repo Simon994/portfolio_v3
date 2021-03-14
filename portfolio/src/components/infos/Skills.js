@@ -8,7 +8,7 @@ import { Icon } from './Icon'
 import styles from './Skills.module.scss'
 
 const Skills = () => {
-  
+
   const icons = [
     <Is.DiGit />,
     <Is.DiGithubBadge />,
@@ -30,18 +30,23 @@ const Skills = () => {
     <SiJest />,
     <SiMocha />
   ]
-  
+
   return (
-    <div id='section3' className={styles.skillsContentOuter}>
-      {
-        icons.map((icon, index) => {
-          return <Icon
-            iconType={icon}
-            key={index}
-          />
-        })
-      }
-    </div>
+    <>
+      <div className={styles.skillsDividerUpper}></div>
+      <div className={styles.skillsDividerMid}></div>
+      <div className={styles.skillsDividerLower}></div>
+      <div id='section3' className={styles.skillsContentOuter}>
+        {
+          icons.map((icon, index) => {
+            return <Icon
+              iconType={icon}
+              key={index}
+            />
+          })
+        }
+      </div>
+    </>
   )
 }
 

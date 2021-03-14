@@ -5,8 +5,31 @@
   padding-top: 75px;
   width: 90%;
   max-width: 900px;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.skillsDividerUpper,
+.skillsDividerMid,
+.skillsDividerLower {
+  width: 100%;
+  position: relative;
+  top: 60px;
+}
+
+.skillsDividerUpper {
+  border-bottom: 1px solid $dark-purple;
+  margin-top: 50px;
+}
+
+.skillsDividerMid {
+  border-bottom: 1px solid $purple;
+  margin-top: 3px;
+}
+
+.skillsDividerLower {
+  border-bottom: 1px solid $pink;
+  margin-top: 3px;
 }

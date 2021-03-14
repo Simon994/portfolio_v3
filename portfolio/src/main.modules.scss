@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 $dark-grey: #333;
 $purple: rgb(168, 30, 189);
 $dark-purple: rgb(61, 0, 99);
@@ -14,3 +16,16 @@ $blend-mode-3: overlay;
 $blend-color-1: transparent;
 $blend-color-2: rgba(255, 105, 180, 0.5);
 $blend-color-3: rgba(255, 105, 180, 0.2);
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  background-color: $dark-grey;
+  overflow-x: hidden;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
