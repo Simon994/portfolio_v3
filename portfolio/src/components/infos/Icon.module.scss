@@ -52,8 +52,16 @@ $offsetLeft) {
   }
 }
 
-.iconGlitch {
+.iconGlitchOne {
   @include svgGlitch("svgGlitchOne", 100, $pink, $dark-grey, #888, $purple, 100, 100, 0, 0, 3);
+
+  svg {
+    top: 0;
+  }
+}
+
+.iconGlitchTwo {
+  @include svgGlitch("svgGlitchOff", 200, $purple, $dark-grey, $pink, $pink, 100, 100, 10, 0, 5);
 
   svg {
     top: 0;
