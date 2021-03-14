@@ -5,6 +5,7 @@ import { SiTypescript, SiJest, SiMocha } from 'react-icons/si'
 import { AiOutlineGitlab } from 'react-icons/ai'
 
 import { Icon } from './Icon'
+import styles from './Skills.module.scss'
 
 const Skills = () => {
   
@@ -31,7 +32,7 @@ const Skills = () => {
   ]
   
   return (
-    <div id='section3' className="skills-content-outer">
+    <div id='section3' className={styles.skillsContentOuter}>
       {
         icons.map((icon, index) => {
           return <Icon

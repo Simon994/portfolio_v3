@@ -1,0 +1,61 @@
+@import '../../main.modules.scss';
+
+.skillsContentBorder {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 30px;
+}
+
+@mixin svgGlitch($name, $intensity, $fillColor, $background,
+$fillHighlight1, $fillHighlight2, $width, $height, $top, $left,
+$offsetLeft) {
+
+  $steps: $intensity;
+
+  @at-root {
+    @for $i from 1 through 2 {
+      @keyframes #{$name}-anim-#{$i} {
+        @for $i from 0 through $steps {
+          $top: random(100);
+          $bottom: random(101 - $top);
+          #{percentage($i*(1/$steps))} {
+            clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+          }
+        }
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: $top+px;
+    left: $left+px;
+    fill: $fillColor;
+    background: $background;
+    width: $width+px;
+    height: $height+px;
+  }
+
+  svg:nth-child(2) {
+    fill: $fillHighlight1;
+    left: ($left - $offsetLeft) + px;
+    animation: #{$name}-anim-1 0.75s linear alternate-reverse;
+    padding-left: 10px;
+  }
+
+  svg:nth-child(3) {
+    fill: $fillHighlight2;
+    left: ($left + $offsetLeft) + px;
+    animation: #{$name}-anim-2 0.8s linear alternate-reverse;
+    padding-left: 10px;
+  }
+}
+
+.iconGlitch {
+  @include svgGlitch("svgGlitchOne", 100, $pink, $dark-grey, #888, $purple, 100, 100, 0, 0, 3);
+
+  svg {
+    top: 0;
+  }
+}

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './Fade.module.scss'
+
 export default function FadeIn(props) {
   const domRef = React.useRef()
   const [isVisible, setVisible] = React.useState(false)
@@ -20,7 +22,7 @@ export default function FadeIn(props) {
 
   return (
     <div
-      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      className={`${styles.fadeInSection} ${isVisible ? `${styles.isVisible}` : ''}`}
       ref={domRef}
     >
       {props.children}
