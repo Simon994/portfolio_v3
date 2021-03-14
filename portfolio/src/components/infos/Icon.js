@@ -8,7 +8,7 @@ export const Icon = (props) => {
 
   return (
     <div className={styles.skillsContentBorder}>
-      <div className={styles.iconGlitch}>
+      <div className={`${props.isVisible ? `${styles.iconGlitch}` : ''}`}>
         {icon}
         {icon}
         {icon}

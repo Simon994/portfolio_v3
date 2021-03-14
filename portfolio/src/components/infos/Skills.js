@@ -9,6 +9,25 @@ import styles from './Skills.module.scss'
 
 const Skills = () => {
 
+  const domRef = React.useRef()
+  const [isVisible, setVisible] = React.useState(false)
+
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(function(entry) {
+        setVisible(entry.isIntersecting)
+      } 
+      )
+    }
+  )
+
+  React.useEffect(() => {
+    observer.observe(domRef.current)
+    return () => observer.disconnect()
+  })
+
+
   const icons = [
     <Is.DiGit />,
     <Is.DiGithubBadge />,
@@ -35,13 +54,14 @@ const Skills = () => {
     <>
       <div className={styles.skillsDividerUpper}></div>
       <div className={styles.skillsDividerMid}></div>
-      <div className={styles.skillsDividerLower}></div>
+      <div className={styles.skillsDividerLower} ref={domRef}></div>
       <div id='section3' className={styles.skillsContentOuter}>
         {
           icons.map((icon, index) => {
             return <Icon
               iconType={icon}
               key={index}
+              isVisible={isVisible}
             />
           })
         }
