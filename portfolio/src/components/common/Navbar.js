@@ -29,6 +29,7 @@ class Navbar extends React.Component {
               duration={1000}
               className={styles.navLink}
               activeClass={styles.selected}
+              data-cy='projects'
             >
                 Projects
             </Link>

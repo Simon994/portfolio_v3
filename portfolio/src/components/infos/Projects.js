@@ -7,7 +7,10 @@ import styles from './Projects.module.scss'
 const Projects = () => {
   return (
     <div id='section2'>   
-      <div className={styles.projectImg1Container}>
+      <div
+        className={styles.projectImg1Container}
+        data-cy='projectImg1Container'
+      >
         <div className={styles.projectImg1Glitch}></div>
         <div className={styles.projectImg1Glitch}></div>
         <div className={styles.projectImg1Glitch}></div>
