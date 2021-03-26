@@ -41,3 +41,9 @@ Cypress.Commands.add('isWithinViewport', { prevSubject: true }, subject => {
 
   return subject
 })
+
+Cypress.Commands.add('isLinked', (dataAttr, hrefLink) => {
+  cy.get(dataAttr)
+    .scrollIntoView()
+    .should('have.attr', 'href', hrefLink)
+})

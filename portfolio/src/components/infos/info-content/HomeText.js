@@ -20,10 +20,18 @@ const HomeText = (props) => {
   return (
     <div className={styles.homeTextOuter}>
       <div className={`${glitch} ${infoText} ${homeTextContainer}`}>
-        <a href="https://github.com/Simon994" target="blank">
+        <a 
+          href="https://github.com/Simon994"
+          target="blank"
+          data-cy='github-social'
+        >
           <DiGithubBadge className={`${aboutIcon} ${github}`} />
         </a>
-        <a href="https://www.linkedin.com/in/simonrtneil/" target="blank">
+        <a 
+          href="https://www.linkedin.com/in/simonrtneil/"
+          target="blank"
+          data-cy='linkedin-social'
+        >
           <TiSocialLinkedinCircular className={`${aboutIcon} ${linkedin}`} />
         </a>
       </div>
