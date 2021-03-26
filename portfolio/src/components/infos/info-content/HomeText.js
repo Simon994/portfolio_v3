@@ -27,7 +27,7 @@ const HomeText = (props) => {
           <TiSocialLinkedinCircular className={`${aboutIcon} ${linkedin}`} />
         </a>
       </div>
-      <div>
+      <div data-cy='about-text'>
         {infos.map((info, index) => (
           <p key={index}
             className={`${glitch} ${infoText} ${homeTextContainer}`}

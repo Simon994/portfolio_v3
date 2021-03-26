@@ -4,6 +4,19 @@ describe('Page visit', () => {
   it('test url works', () => {
     cy.visit('http://localhost:3000/portfolio')
   })
+
+  it('test About navigation link is selected', () => {
+    cy.get('[data-cy=about]')
+      .invoke('attr', 'class')
+      .should('contain', 'selected')
+  })
+
+  it('test first paragraph of About is visible', () => {
+    cy.get('[data-cy=about-text]')
+      .find('p')
+      .first()
+      .isWithinViewport()
+  })
 })
 
 describe('Projects navigation', () => {
