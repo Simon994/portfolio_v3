@@ -42,7 +42,11 @@ const Skills = () => {
     <>
       <div className={styles.skillsDividerUpper}></div>
       <div className={styles.skillsDividerMid}></div>
-      <div className={styles.skillsDividerLower} ref={domRef}></div>
+      <div
+        className={styles.skillsDividerLower}
+        ref={domRef}
+        data-cy='skills-divider'
+      ></div>
       <div id='section3' className={styles.skillsContentOuter}>
         {
           icons.map((icon, index) => {
