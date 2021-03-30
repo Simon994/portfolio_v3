@@ -1,5 +1,6 @@
 import React from 'react'
 import { Octokit } from '@octokit/core'
+import parse from 'html-react-parser'
 
 function GitHubActivity() {
   const [events, setEvents] = React.useState([])
@@ -47,7 +48,9 @@ function GitHubActivity() {
         }
         {
           readme &&
-            <div>{readme}</div>
+            <div>{
+              parse(`${readme}`)
+            }</div>
         }
       </div>
     </>
