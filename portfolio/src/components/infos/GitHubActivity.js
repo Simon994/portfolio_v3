@@ -12,34 +12,31 @@ function GitHubActivity() {
       repo = 'countdown',
       perPage = 5
 
-    let fiveMostRecentCommits
     async function getMostRecentCommits() {
 
       console.log('I GET HERE!!! 🚨')
       try {
-        fiveMostRecentCommits = await octokit.request(
+        const response = await octokit.request(
           `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
         )
-        console.log('COMMENTS???? 🏄🏼‍♂️', fiveMostRecentCommits.data)
+        console.log('COMMENTS???? 🏄🏼‍♂️', response.data)
+        setCommits(response.data)
       } catch (error) {
         console.error('SOMETHING WENT WRONG! :(', error)
       }
     }
-    getMostRecentCommits()
-    console.log('MOST RECENT HERE±!!!!!!!!', fiveMostRecentCommits)
-    setCommits([fiveMostRecentCommits])
 
+    getMostRecentCommits()
   }, [])
 
   return (
     <>
-      <div>
-        STARTING GITHUB ACTIVITY!!!
-      </div>
       <ul>
-        <li>
-          Commits!! {commits && commits}
-        </li>
+        {
+          commits.map((commit) => (
+            <li key={commit.sha}>{commit.commit.message}</li>
+          ))
+        }
       </ul>
     </>
   )
