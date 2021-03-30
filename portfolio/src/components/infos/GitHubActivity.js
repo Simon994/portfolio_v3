@@ -2,42 +2,36 @@ import React from 'react'
 import { Octokit } from '@octokit/core'
 
 function GitHubActivity() {
-  const [commits, setCommits] = React.useState([])
+  const [events, setEvents] = React.useState([])
   const octokit = new Octokit()
 
 
   React.useEffect(() => {
 
-    const owner = 'Simon994',
-      repo = 'countdown',
-      perPage = 5
+    const eventsPerPage = 1
 
-    async function getMostRecentCommits() {
-
-      console.log('I GET HERE!!! 🚨')
+    async function getMostRecentEvents() {
       try {
         const response = await octokit.request(
-          `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
+          `/users/{username}/events/public?per_page=${eventsPerPage}`, { username: 'Simon994' }
         )
         console.log('COMMENTS???? 🏄🏼‍♂️', response.data)
-        setCommits(response.data)
+        setEvents(response.data)
       } catch (error) {
         console.error('SOMETHING WENT WRONG! :(', error)
       }
     }
 
-    getMostRecentCommits()
+    getMostRecentEvents()
   }, [])
 
   return (
     <>
-      <ul>
-        {
-          commits.map((commit) => (
-            <li key={commit.sha}>{commit.commit.message}</li>
-          ))
+      <div style={{color: 'white'}}>
+        {events.length &&
+          events[0].payload.commits[0].message
         }
-      </ul>
+      </div>
     </>
   )
 }
