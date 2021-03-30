@@ -7,28 +7,41 @@ function GitHubActivity() {
 
 
   React.useEffect(() => {
+
     const owner = 'Simon994',
       repo = 'countdown',
       perPage = 5
 
+    let fiveMostRecentCommits
     async function getMostRecentCommits() {
-      const fiveMostRecentCommits = await octokit.request(
-        `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
-      )
-      return fiveMostRecentCommits
-    }
 
-    setCommits(getMostRecentCommits())
+      console.log('I GET HERE!!! 🚨')
+      try {
+        fiveMostRecentCommits = await octokit.request(
+          `GET /repos/${owner}/${repo}/commits`, { owner, repo, per_page: perPage }
+        )
+        console.log('COMMENTS???? 🏄🏼‍♂️', fiveMostRecentCommits.data)
+      } catch (error) {
+        console.error('SOMETHING WENT WRONG! :(', error)
+      }
+    }
+    getMostRecentCommits()
+    console.log('MOST RECENT HERE±!!!!!!!!', fiveMostRecentCommits)
+    setCommits([fiveMostRecentCommits])
+
   }, [])
 
   return (
-    <ul>
-      {commits.map(commit => (
-        <li key={commit.id}>
-          {commit.author.name}: {commit.message}
+    <>
+      <div>
+        STARTING GITHUB ACTIVITY!!!
+      </div>
+      <ul>
+        <li>
+          Commits!! {commits && commits}
         </li>
-      ))}
-    </ul>
+      </ul>
+    </>
   )
 }
 
