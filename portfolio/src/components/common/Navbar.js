@@ -48,6 +48,19 @@ class Navbar extends React.Component {
                 Skills
             </Link>
           </li>
+          <li className={styles.listItem}>
+            <Link
+              to="section4"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              className={styles.navLink}
+              activeClass={styles.selected}
+              data-cy='learning'
+            >
+                Learning
+            </Link>
+          </li>
         </ul>
       </nav>
     )

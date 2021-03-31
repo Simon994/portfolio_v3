@@ -28,27 +28,44 @@ function GitHubActivity() {
   }, [])
 
   return (
-    <>
-      <div style={{ color: 'white' }}>
-        <p>Latest commit</p>
-        {commitMessage &&
-            <p>{commitMessage}</p>
-        }
-        <div className={styles.readmeOuterContainer}>
-          <div className={styles.readmeHeader}>
-            <p>Repo README</p>
-          </div>
-          <div className={styles.readmeContentContainer}>
-            {
-              readme &&
+    <div>
+      <div className={styles.learningDividerTop}></div>
+      <div className={styles.learningDividerMid}></div>
+      <div className={styles.learningDividerBottom}></div>
+      <div
+        id='section4'
+        className={styles.currentActivity}
+        style={{ color: 'white' }}
+      >
+        <h1>Most recently Learning...</h1>
+        <p>Here&apos;s a summary of my most recently-updated repo on GitHub.</p>
+        <p>This data is provided via the GitHub API</p>
+        <div className={styles.ghContentContainer}>
+          <div className={styles.readmeOuterContainer}>
+            <div className={styles.readmeHeader}>
+              <p>Repo README</p>
+            </div>
+            <div className={styles.readmeContentContainer}>
+              {
+                readme &&
                 <div>{
                   parse(`${readme}`)
                 }</div>
+              }
+            </div>
+          </div>
+          <div className={styles.additionalInfo}>
+            <p>Latest commit</p>
+            {commitMessage &&
+              <p>{commitMessage}</p>
             }
           </div>
+
         </div>
+
+
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,5 +1,42 @@
 @import '../../main.modules.scss';
 
+.learningDividerTop,
+.learningDividerMid,
+.learningDividerBottom {
+  width: 100%;
+  position: relative;
+  top: 60px;
+}
+
+.learningDividerTop {
+  border-bottom: 1px solid $pink;
+  margin-top: 100px;
+}
+
+.learningDividerMid {
+  border-bottom: 1px solid $purple;
+  margin-top: 3px;
+}
+
+.learningDividerBottom {
+  border-bottom: 1px solid $dark-purple;
+  margin-top: 3px;
+}
+
+.currentActivity {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 75px;
+  width: 90%;
+  min-height: 95vh;
+}
+
+.ghContentContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .readmeOuterContainer {
   display: flex;
   flex-direction: column;
@@ -8,10 +45,14 @@
 
 .readmeHeader,
 .readmeContentContainer {
-  border: 1px solid $dark-purple;
+  border: 1px solid white;
 }
 
 .readmeContentContainer {
   height: 300px;
   overflow: scroll;
+}
+
+.additionalInfo {
+  width: 300px;
 }
