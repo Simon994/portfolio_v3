@@ -7,12 +7,28 @@ import styles from './GitHubActivity.module.scss'
 function GitHubActivity() {
   const [commitMessage, setCommitMessage] = React.useState(null)
   const [readme, setReadme] = React.useState(null)
+  const [deltaDays, setDeltaDays] = React.useState(null)
+  const [repoUrl, setRepoUrl] = React.useState(null)
 
   React.useEffect(() => {
     async function getMostRecentEvents() {
       try {
         const latestGitHubEvent = await getLatestGitHubEvent()
         const repoName = latestGitHubEvent.data[0].repo.name
+        const newRepoUrl = `https://github.com/${repoName}`
+        setRepoUrl(newRepoUrl)
+
+        //Set state for how long ago the event happened, in days
+        const eventDate = new Date(latestGitHubEvent.data[0].created_at)
+        const currentDate = new Date()
+        const dateDeltaDays = Math.floor((currentDate - eventDate) / (1000 * 60 * 60 * 24))
+        if (dateDeltaDays === 0) {
+          setDeltaDays('Today')
+        } else if (dateDeltaDays === 1) {
+          setDeltaDays('Yesterday')
+        } else {
+          setDeltaDays(`${dateDeltaDays} days ago`)
+        }
 
         // Trim commit message to return only the first line
         setCommitMessage(trimCommitMessage(latestGitHubEvent))
@@ -41,6 +57,24 @@ function GitHubActivity() {
         <p>Here&apos;s a summary of my most recently-updated repo on GitHub.</p>
         <p>This data is provided via the GitHub API</p>
         <div className={styles.ghContentContainer}>
+
+          <div className={styles.additionalInfo}>
+            <p></p>
+            <p>Updated {deltaDays}</p>
+            <p>Latest commit message:</p>
+            {commitMessage &&
+              <p>{commitMessage}</p>
+            }
+            <button>
+              <a
+                href={repoUrl}
+                target='blank'
+              >
+                Go to repo
+              </a>
+            </button>
+          </div>
+
           <div className={styles.readmeOuterContainer}>
             <div className={styles.readmeHeader}>
               <p>Repo README</p>
@@ -54,12 +88,7 @@ function GitHubActivity() {
               }
             </div>
           </div>
-          <div className={styles.additionalInfo}>
-            <p>Latest commit</p>
-            {commitMessage &&
-              <p>{commitMessage}</p>
-            }
-          </div>
+
 
         </div>
 
