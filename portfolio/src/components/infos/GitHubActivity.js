@@ -2,6 +2,7 @@ import React from 'react'
 import parse from 'html-react-parser'
 
 import { getLatestGitHubEvent, getGitHubReadme } from '../../lib/api'
+import styles from './GitHubActivity.module.scss'
 
 function GitHubActivity() {
   const [commitMessage, setCommitMessage] = React.useState(null)
@@ -33,12 +34,19 @@ function GitHubActivity() {
         {commitMessage &&
             <p>{commitMessage}</p>
         }
-        {
-          readme &&
-            <div>{
-              parse(`${readme}`)
-            }</div>
-        }
+        <div className={styles.readmeOuterContainer}>
+          <div className={styles.readmeHeader}>
+            <p>Repo README</p>
+          </div>
+          <div className={styles.readmeContentContainer}>
+            {
+              readme &&
+                <div>{
+                  parse(`${readme}`)
+                }</div>
+            }
+          </div>
+        </div>
       </div>
     </>
   )

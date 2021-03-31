@@ -1,0 +1,17 @@
+@import '../../main.modules.scss';
+
+.readmeOuterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.readmeHeader,
+.readmeContentContainer {
+  border: 1px solid $dark-purple;
+}
+
+.readmeContentContainer {
+  height: 300px;
+  overflow: scroll;
+}

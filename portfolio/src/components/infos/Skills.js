@@ -58,6 +58,9 @@ const Skills = () => {
           })
         }
       </div>
+      <div className={styles.skillsDividerBottom}></div>
+      <div className={styles.skillsDividerBottomMid}></div>
+      <div className={styles.skillsDividerBottomLower}></div>
     </>
   )
 }
