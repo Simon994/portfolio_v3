@@ -1,7 +1,11 @@
 import React from 'react'
 import parse from 'html-react-parser'
 
-import { getLatestGitHubEvent, getGitHubReadme } from '../../lib/api'
+import {
+  getLatestGitHubEvent,
+  getGitHubReadme,
+  getGitHubLanguages
+} from '../../lib/api'
 import styles from './GitHubActivity.module.scss'
 
 function GitHubActivity() {
@@ -9,6 +13,7 @@ function GitHubActivity() {
   const [readme, setReadme] = React.useState(null)
   const [deltaDays, setDeltaDays] = React.useState(null)
   const [repoUrl, setRepoUrl] = React.useState(null)
+  const [repoLanguages, setRepoLanguages] = React.useState(null)
 
   React.useEffect(() => {
     async function getMostRecentEvents() {
@@ -36,6 +41,8 @@ function GitHubActivity() {
         const readme = await getGitHubReadme(repoName)
         setReadme(readme)
 
+        const languages = await getGitHubLanguages(repoName)
+        setRepoLanguages(languages)
       } catch (error) {
         console.error('SOMETHING WENT WRONG! :(', error)
       }
@@ -65,6 +72,15 @@ function GitHubActivity() {
             {commitMessage &&
               <p>{commitMessage}</p>
             }
+            <div>
+              <p>Languages: {
+                repoLanguages &&
+                repoLanguages.map((language, index) => {
+                  return <span key={index}>{language} </span>
+                })
+              
+              }</p>
+            </div>
             <button>
               <a
                 href={repoUrl}

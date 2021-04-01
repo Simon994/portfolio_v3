@@ -21,3 +21,9 @@ export const getGitHubReadme = async (repoName) => {
   )
   return response.data
 }
+
+export const getGitHubLanguages = async (repoName) => {
+  const octokit = new Octokit()
+  const response = await octokit.request(`/repos/${repoName}/languages`)
+  return Object.keys(response.data)
+}
