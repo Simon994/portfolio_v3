@@ -1,21 +1,21 @@
-import React from 'react'
-import parse from 'html-react-parser'
+import {useState, useEffect} from 'react'
 
 import {
   getLatestGitHubEvent,
   getGitHubReadme,
   getGitHubLanguages
 } from '../../lib/api'
+import GitHubContent from './info-content/GitHubContent'
 import styles from './GitHubActivity.module.scss'
 
 function GitHubActivity() {
-  const [commitMessage, setCommitMessage] = React.useState(null)
-  const [readme, setReadme] = React.useState(null)
-  const [deltaDays, setDeltaDays] = React.useState(null)
-  const [repoUrl, setRepoUrl] = React.useState(null)
-  const [repoLanguages, setRepoLanguages] = React.useState(null)
+  const [repoUrl, setRepoUrl] = useState('')
+  const [deltaDays, setDeltaDays] = useState('')
+  const [commitMessage, setCommitMessage] = useState('')
+  const [readme, setReadme] = useState('')
+  const [repoLanguages, setRepoLanguages] = useState([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function getMostRecentEvents() {
       try {
         const latestGitHubEvent = await getLatestGitHubEvent()
@@ -63,52 +63,13 @@ function GitHubActivity() {
         <h1>Most recently Learning...</h1>
         <p>Here&apos;s a summary of my most recently-updated repo on GitHub.</p>
         <p>This data is provided via the GitHub API</p>
-        <div className={styles.ghContentContainer}>
-
-          <div className={styles.additionalInfo}>
-            <p></p>
-            <p>Updated {deltaDays}</p>
-            <p>Latest commit message:</p>
-            {commitMessage &&
-              <p>{commitMessage}</p>
-            }
-            <div>
-              <p>Languages: {
-                repoLanguages &&
-                repoLanguages.map((language, index) => {
-                  return <span key={index}>{language} </span>
-                })
-              
-              }</p>
-            </div>
-            <button>
-              <a
-                href={repoUrl}
-                target='blank'
-              >
-                Go to repo
-              </a>
-            </button>
-          </div>
-
-          <div className={styles.readmeOuterContainer}>
-            <div className={styles.readmeHeader}>
-              <p>Repo README</p>
-            </div>
-            <div className={styles.readmeContentContainer}>
-              {
-                readme &&
-                <div>{
-                  parse(`${readme}`)
-                }</div>
-              }
-            </div>
-          </div>
-
-
-        </div>
-
-
+        <GitHubContent
+          deltaDays={deltaDays}
+          commitMessage={commitMessage}
+          repoLanguages={repoLanguages}
+          repoUrl={repoUrl}
+          readme={readme}
+        />
       </div>
     </div>
   )

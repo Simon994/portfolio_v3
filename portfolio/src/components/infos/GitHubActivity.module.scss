@@ -30,30 +30,3 @@
   width: 90%;
   min-height: 95vh;
 }
-
-.ghContentContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.readmeOuterContainer {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-}
-
-.readmeHeader,
-.readmeContentContainer,
-.additionalInfo {
-  border: 1px solid white;
-}
-
-.readmeContentContainer {
-  height: 300px;
-  overflow: scroll;
-}
-
-.additionalInfo {
-  width: 300px;
-}
