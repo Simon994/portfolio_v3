@@ -24,8 +24,8 @@ function GitHubActivity() {
         setRepoUrl(newRepoUrl)
 
         //Set state for how long ago the event happened, in days
-        const eventDate = new Date(latestGitHubEvent.data[0].created_at)
-        const currentDate = new Date()
+        const eventDate = removeTimeFromDate(new Date(latestGitHubEvent.data[0].created_at))
+        const currentDate = removeTimeFromDate(new Date())
         const dateDeltaDays = Math.floor((currentDate - eventDate) / (1000 * 60 * 60 * 24))
         if (dateDeltaDays === 0) {
           setDeltaDays('Today')
@@ -78,6 +78,10 @@ function GitHubActivity() {
 const trimCommitMessage = (eventsResponse) => {
   const messageText = eventsResponse.data[0].payload.commits[0].message
   return messageText.split('\n')[0]
+}
+
+const removeTimeFromDate = (fullDate) => {
+  return new Date(fullDate.getFullYear(), fullDate.getMonth(), fullDate.getDate())
 }
 
 export default GitHubActivity
