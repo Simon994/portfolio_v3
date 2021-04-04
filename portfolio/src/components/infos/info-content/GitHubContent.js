@@ -15,20 +15,21 @@ function GitHubContent(props) {
     <div className={styles.ghContentContainer}>
       
       <section className={styles.additionalInfo}>
-        <p>Updated {deltaDays}</p>
-        <p>Latest commit message:</p>
+        <p>Updated <span className={styles.deltaDays}>{deltaDays}</span></p>
+        <h4 className={styles.blurbHeader}>Latest commit message:</h4>
         {commitMessage &&
-          <p>{commitMessage}</p>
+        <p className={styles.commitMessage}>{commitMessage}</p>
         }
         <div>
-          <p>Languages: {
+          <h4 className={styles.blurbHeader}>Languages:</h4>
+          {
             repoLanguages.length !== 0 &&
             repoLanguages.map((language, index) => {
-              return <span key={index}>{language} </span>
+              return <p key={index} className={styles.language}>{language} </p>
             })
-          }</p>
+          }
         </div>
-        <a href={repoUrl} target='blank'>
+        <a href={repoUrl} target='blank' className={styles.repoLink}>
           Go to repo
         </a>
       </section>

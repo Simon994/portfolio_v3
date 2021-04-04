@@ -1,7 +1,41 @@
+@import '../../../main.modules.scss';
+
 .ghContentContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  a {
+    color: $pink;
+  }
+}
+
+.additionalInfo {
+  width: 300px;
+}
+
+.deltaDays,
+.language {
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+.blurbHeader {
+  margin-bottom: 5px;
+}
+
+.commitMessage {
+  margin-top: 5px;
+}
+
+.language {
+  margin: 5px;
+}
+
+.repoLink {
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 15px;
 }
 
 .readmeOuterContainer {
@@ -10,17 +44,18 @@
   width: 300px;
 }
 
+.additionalInfo,
 .readmeHeader,
-.readmeContentContainer,
-.additionalInfo {
+.readmeContentContainer {
   border: 1px solid white;
 }
 
-.readmeContentContainer {
-  height: 300px;
-  overflow: scroll;
+.readmeHeader {
+  border-bottom: 1px dashed white;
 }
 
-.additionalInfo {
-  width: 300px;
+.readmeContentContainer {
+  border-top: none;
+  height: 300px;
+  overflow: scroll;
 }

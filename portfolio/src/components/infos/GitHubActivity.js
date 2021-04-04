@@ -60,7 +60,7 @@ function GitHubActivity() {
         className={styles.currentActivity}
         style={{ color: 'white' }}
       >
-        <h1>Most recently Learning...</h1>
+        <h1 className={styles.headerLearning}>Most recently Learning...</h1>
         <p>Here&apos;s a summary of my most recently-updated repo on GitHub.</p>
         <p>This data is provided via the GitHub API</p>
         <GitHubContent
