@@ -6,7 +6,6 @@ function GitHubContent(props) {
 
   const {
     deltaDays,
-    commitMessage,
     repoLanguages,
     repoUrl,
     readme
@@ -25,10 +24,6 @@ function GitHubContent(props) {
       
       <section className={styles.additionalInfo}>
         <p>Updated <span className={styles.deltaDays}>{deltaDays}</span></p>
-        <h4 className={styles.blurbHeader}>Latest commit message:</h4>
-        {commitMessage &&
-        <p className={styles.commitMessage}>{commitMessage}</p>
-        }
         <div>
           <h4 className={styles.blurbHeader}>Languages:</h4>
           {

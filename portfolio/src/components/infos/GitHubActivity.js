@@ -11,7 +11,6 @@ import styles from './GitHubActivity.module.scss'
 function GitHubActivity() {
   const [repoUrl, setRepoUrl] = useState('')
   const [deltaDays, setDeltaDays] = useState('')
-  const [commitMessage, setCommitMessage] = useState('')
   const [readme, setReadme] = useState('')
   const [repoLanguages, setRepoLanguages] = useState([])
 
@@ -34,9 +33,6 @@ function GitHubActivity() {
         } else {
           setDeltaDays(`${dateDeltaDays} days ago`)
         }
-
-        // Trim commit message to return only the first line
-        setCommitMessage(trimCommitMessage(latestGitHubEvent))
 
         const readme = await getGitHubReadme(repoName)
         setReadme(readme)
@@ -65,7 +61,6 @@ function GitHubActivity() {
         <p>This data is provided via the GitHub API</p>
         <GitHubContent
           deltaDays={deltaDays}
-          commitMessage={commitMessage}
           repoLanguages={repoLanguages}
           repoUrl={repoUrl}
           readme={readme}
@@ -73,11 +68,6 @@ function GitHubActivity() {
       </div>
     </div>
   )
-}
-
-const trimCommitMessage = (eventsResponse) => {
-  const messageText = eventsResponse.data[0].payload.commits[0].message
-  return messageText.split('\n')[0]
 }
 
 const removeTimeFromDate = (fullDate) => {
