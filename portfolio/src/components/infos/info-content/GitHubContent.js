@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from './GitHubContent.module.scss'
 import parse from 'html-react-parser'
 
@@ -10,6 +11,14 @@ function GitHubContent(props) {
     repoUrl,
     readme
   } = props
+
+  const parsedReadmeLinkRemoved = parse(readme, {
+    replace: ({ attribs }) => {
+      if (attribs && attribs.class === 'octicon octicon-link') {
+        return React.createElement(React.Fragment)
+      }
+    },
+  })
 
   return (
     <div className={styles.ghContentContainer}>
@@ -42,7 +51,7 @@ function GitHubContent(props) {
           {
             readme &&
             <div>{
-              parse(`${readme}`)
+              parsedReadmeLinkRemoved
             }</div>
           }
         </div>
