@@ -12,3 +12,9 @@ Updates in this version include:
 * Adding a section to highlight recent GitHub activity
 * Removing routing and adding smooth scrolling for sections
 * Refactoring and styling improvements
+
+## Testing
+To run tests with Cypress: 
+
+1. Start development server: `npm start`
+2. Start Cypress Test Runner: `npx cypress open`

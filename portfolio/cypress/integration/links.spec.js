@@ -20,12 +20,16 @@ describe('Links', () => {
 
     //499px links
     cy.isLinked(
+      '[data-cy=github-rawshot]',
+      'https://github.com/Simon994/RAWShot'
+    )
+    cy.isLinked(
       '[data-cy=live-499px]',
       'https://rawshot-499px.herokuapp.com/'
     )
     cy.isLinked(
       '[data-cy=github-499px]',
-      'https://github.com/Simon994/RAWShot'
+      'https://github.com/Simon994/499px'
     )
 
     //Discover Montreal links

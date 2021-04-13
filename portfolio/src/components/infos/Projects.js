@@ -21,16 +21,21 @@ const Projects = () => {
           <h3>499px (RAWshot)</h3>
           <p>A full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px</p>
           <p>Technologies include: Django, Django REST framework, React, PostgreSQL, SASS, Axios and Semantic UI React</p>
-          <p>Built solo in 8 days</p>
+          <p>
+            Adds to a <a
+              href="https://github.com/Simon994/RAWShot"
+              target="blank"
+              data-cy="github-rawshot"
+            > previous project</a> built solo in 8 days, 
+          </p>
           <p><a
             href="https://rawshot-499px.herokuapp.com/"
             target="blank"
             data-cy="live-499px"
           >
             Live version
-          </a>  |  
-          <a
-            href="https://github.com/Simon994/RAWShot"
+          </a>  |  <a
+            href="https://github.com/Simon994/499px"
             target="blank"
             data-cy="github-499px"
           >
@@ -54,8 +59,7 @@ const Projects = () => {
             data-cy="live-montreal"
           >
             Live version
-          </a>  |  
-          <a
+          </a>  |  <a
             href="https://github.com/Simon994/sei-project-3"
             target="blank"
             data-cy="github-montreal"
@@ -78,15 +82,13 @@ const Projects = () => {
             data-cy="live-newsfeed"
           >
             Live version (v2Global)
-          </a>  |  
-          <a 
+          </a>  |  <a 
             href="https://github.com/Simon994/news-feed-v2Global"
             target="blank"
             data-cy="github-newsfeedv2"
           >
             GitHub repo (v2Global)
-          </a>  |  
-          <a
+          </a>  |  <a
             href="https://github.com/Simon994/news-feed"
             target="blank"
             data-cy="github-newsfeedv1"
@@ -109,8 +111,7 @@ const Projects = () => {
             data-cy="live-redshirts"
           >
               Live version
-          </a>  |  
-          <a
+          </a>  |  <a
             href="https://github.com/Simon994/sei-project-1"
             target="blank"
             data-cy="github-redshirts"
