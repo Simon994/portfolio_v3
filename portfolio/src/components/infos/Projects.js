@@ -28,6 +28,12 @@ const content = {
 const Projects = () => {
   return (
     <div id='section2'>   
+
+      <div className={styles.projectImg2Container}></div>
+      <FadeIn>
+        <ProjectSection {...content.project1}/>
+      </FadeIn>
+
       <div
         className={styles.projectImg1Container}
         data-cy='projectImg1Container'
@@ -36,12 +42,6 @@ const Projects = () => {
           <div key={i} className={styles.projectImg1Glitch}></div>
         )}
       </div>
-
-      <FadeIn>
-        <ProjectSection {...content.project1}/>
-      </FadeIn>
-
-      <div className={styles.projectImg2Container}></div>
       <FadeIn>
         <ProjectSection {...content.project4}/>
       </FadeIn>
