@@ -2,6 +2,9 @@
 
 This is the third version of my portfolio. 
 
+## Requirements
+node version v14
+
 The live version can be found [here](https://simon994.github.io/portfolio/).  
 
 Previous versions can be found [here](https://github.com/Simon994/previous_portfolios). 

@@ -1,0 +1,14 @@
+@import '../../../main.modules.scss';
+
+.projectBlurb {
+  text-align: center;
+  padding: 30px;
+  text-shadow: 2px 2px $dark-purple;
+  color: white;
+  line-height: 1.5;
+
+  a {
+    text-decoration: none;
+    color: $pink;
+  }
+}

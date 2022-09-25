@@ -4,6 +4,27 @@ import React from 'react'
 import FadeIn from './Fade'
 import styles from './Projects.module.scss'
 
+import ProjectSection from './info-content/ProjectSection'
+
+
+const content = {
+  project1: {
+    title: 'Wurtec',
+    paragraphs: ['A full-stack e-commerce web app for Wurtec, an elevator manufacturing business with branches across the US and international distribution. Used by large elevator customers such as Otis, Schindler, Kone, and Thyssen-Krupp.', 'Tech stack includes: React, NextJS, NodeJS, NestJS, Typescript, Prisma (connected to a PostgreSQL database)', 'The API layer interacts with a third-party headless CMS.'],
+    liveLink: 'https://wurtec.com/',
+    liveTest: 'live-wurtec',
+  },
+  project4: {
+    title: '499px (RAWshot) - Personal Learning Project',
+    paragraphs: ['A full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px', 'Technologies include: Django, Django REST framework, React, PostgreSQL, SASS, Axios and Semantic UI React'],
+    liveLink: 'https://rawshot-499px.herokuapp.com/',
+    liveTest: 'live-499px',
+    secondLink: 'https://github.com/Simon994/499px',
+    secondTest: 'github-499px',
+    secondText: 'GitHub repo'
+  }
+}
+
 const Projects = () => {
   return (
     <div id='section2'>   
@@ -11,41 +32,20 @@ const Projects = () => {
         className={styles.projectImg1Container}
         data-cy='projectImg1Container'
       >
-        <div className={styles.projectImg1Glitch}></div>
-        <div className={styles.projectImg1Glitch}></div>
-        <div className={styles.projectImg1Glitch}></div>
+        {[...Array(3)].map((x, i) =>
+          <div key={i} className={styles.projectImg1Glitch}></div>
+        )}
       </div>
 
       <FadeIn>
-        <section className={styles.projectBlurb}>
-          <h3>499px (RAWshot)</h3>
-          <p>A full-stack app, with multiple relationships and CRUD functionality, cloning key parts of the photo-sharing website 500px</p>
-          <p>Technologies include: Django, Django REST framework, React, PostgreSQL, SASS, Axios and Semantic UI React</p>
-          <p>
-            Adds to a <a
-              href="https://github.com/Simon994/RAWShot"
-              target="blank"
-              data-cy="github-rawshot"
-            > previous project</a> built solo in 8 days, 
-          </p>
-          <p><a
-            href="https://rawshot-499px.herokuapp.com/"
-            target="blank"
-            data-cy="live-499px"
-          >
-            Live version
-          </a>  |  <a
-            href="https://github.com/Simon994/499px"
-            target="blank"
-            data-cy="github-499px"
-          >
-            GitHub repo
-          </a> </p>
-          <p></p>
-        </section>
+        <ProjectSection {...content.project1}/>
       </FadeIn>
 
       <div className={styles.projectImg2Container}></div>
+      <FadeIn>
+        <ProjectSection {...content.project4}/>
+      </FadeIn>
+
 
       <FadeIn>
         <section className={styles.projectBlurb}>
