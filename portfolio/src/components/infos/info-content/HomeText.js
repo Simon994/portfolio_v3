@@ -21,7 +21,7 @@ const HomeText = (props) => {
     <div className={styles.homeTextOuter}>
       <div className={`${glitch} ${infoText} ${homeTextContainer}`}>
         <a 
-          href="https://github.com/Simon994"
+          href="https://github.com/s994n"
           target="blank"
           data-cy='github-social'
         >

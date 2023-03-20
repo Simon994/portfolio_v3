@@ -16,7 +16,7 @@ class App extends React.Component {
         <Home />
         <Projects />
         <Skills />
-        <GitHubActivity />
+        {/* <GitHubActivity /> */}
       </>
     )
   }

@@ -14,15 +14,17 @@
 }
 
 .projectImg1Container,
-.projectImg2Container,
 .projectImg3Container,
 .projectImg4Container {
   position: relative;
   opacity: 0.3;
 }
 
-.projectImg2Container,
-.projectImg3Container,
+.projectImgContainerWurtec,
+.projectImgContainerR4R,
+.projectImgContainerRawshot,
+.projectImgContainerMontreal,
+.projectImgContainerNewsFeed,
 .projectImg4Container {
   background-position: center;
   background-size: cover;
@@ -36,15 +38,31 @@
   overflow: hidden;
 }
 
-.projectImg2Container {
+.projectImgContainerWurtec {
   background-image: url('../../styles/screenshots/wurtec.png');
   min-height: 400px;
   background-size: cover;
 }
 
-.projectImg3Container {
-  background-image: url('../../styles/screenshots/news_feed_home_screenshot.png');
+.projectImgContainerR4R, .projectImgContainerRawshot, .projectImgContainerMontreal, .projectImgContainerNewsFeed {
   min-height: 300px;
+  background-size: cover;
+}
+
+.projectImgContainerR4R {
+  background-image: url('../../styles/screenshots/r4r.png');
+}
+
+.projectImgContainerRawshot {
+  background-image: url('../../styles/screenshots/rawshot_photogrid_screenshot.png');
+}
+
+.projectImgContainerMontreal {
+  background-image: url('../../styles/screenshots/discover_montreal_home_screenshot.png');
+}
+
+.projectImgContainerNewsFeed {
+  background-image: url('../../styles/screenshots/news_feed_home_screenshot.png');
 }
 
 .projectImg4Container {

@@ -5,9 +5,9 @@ This is the third version of my portfolio.
 ## Requirements
 node version v14
 
-The live version can be found [here](https://simon994.github.io/portfolio/).  
+The live version can be found [here](https://s994n.github.io/portfolio/).  
 
-Previous versions can be found [here](https://github.com/Simon994/previous_portfolios). 
+Previous versions can be found [here](https://github.com/s994n/previous_portfolios). 
 
 Updates in this version include:
 * Adding CSS modules

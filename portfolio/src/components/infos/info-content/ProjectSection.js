@@ -1,6 +1,6 @@
 import styles from './ProjectSection.module.scss'
 
-const ProjectSection = ({title, paragraphs, liveLink, liveTest, secondLink, secondTest, secondText}) => {
+const ProjectSection = ({title, paragraphs, liveLink, liveTest, secondLink, secondTest, secondText, liveText='Live Version'}) => {
   return (
     <section className={styles.projectBlurb}>
       <h3>{title}</h3>
@@ -12,7 +12,7 @@ const ProjectSection = ({title, paragraphs, liveLink, liveTest, secondLink, seco
         target="blank"
         data-cy={liveTest}
       >
-            Live version
+        {liveText}
       </a> {secondText && ( 
         <> | <a
           href={secondLink}
