@@ -21,3 +21,6 @@ To run tests with Cypress:
 
 1. Start development server: `npm start`
 2. Start Cypress Test Runner: `npx cypress open`
+
+## Deploy
+`npm run deploy`
