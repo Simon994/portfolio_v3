@@ -17,7 +17,7 @@ const content = [
   },
   {
     title: 'Commercial Project: Racing For Recovery',
-    paragraphs: ['A lifestyly mobile app for Racing For Recovery, a Non-profit organization.', 'Tech stack includes: React Native, Expo, EAS Build, React Native Paper and Styled Components, Strapi and Koa, Typescript', 'The App is available on Google Play and Apple App Store.'],
+    paragraphs: ['A lifestyle mobile app for Racing For Recovery, a Non-profit organization.', 'Tech stack includes: React Native, Expo, EAS Build, React Native Paper and Styled Components, Strapi and Koa, Typescript', 'The App is available on Google Play and Apple App Store.'],
     liveLink: 'https://play.google.com/store/apps/details?id=com.racingForRecovery.app&pli=1',
     liveText: 'On Play Store',
     liveTest: 'live-r4r-play-store',
