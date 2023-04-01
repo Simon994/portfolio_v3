@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.25b334fc.chunk.css",
+    "main.css": "/portfolio/static/css/main.e4c2078f.chunk.css",
     "main.js": "/portfolio/static/js/main.c6067b58.chunk.js",
     "main.js.map": "/portfolio/static/js/main.c6067b58.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.4486c707.js",
@@ -8,7 +8,7 @@
     "static/js/2.9cbe2358.chunk.js": "/portfolio/static/js/2.9cbe2358.chunk.js",
     "static/js/2.9cbe2358.chunk.js.map": "/portfolio/static/js/2.9cbe2358.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.25b334fc.chunk.css.map": "/portfolio/static/css/main.25b334fc.chunk.css.map",
+    "static/css/main.e4c2078f.chunk.css.map": "/portfolio/static/css/main.e4c2078f.chunk.css.map",
     "static/js/2.9cbe2358.chunk.js.LICENSE.txt": "/portfolio/static/js/2.9cbe2358.chunk.js.LICENSE.txt",
     "static/media/Projects.module.scss": "/portfolio/static/media/wurtec.cbb8d198.png",
     "static/media/logo.32c4a230.png": "/portfolio/static/media/logo.32c4a230.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.4486c707.js",
     "static/js/2.9cbe2358.chunk.js",
-    "static/css/main.25b334fc.chunk.css",
+    "static/css/main.e4c2078f.chunk.css",
     "static/js/main.c6067b58.chunk.js"
   ]
 }
